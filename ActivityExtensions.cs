@@ -13,10 +13,10 @@ namespace PoGoChatbot
             Regex addedRegex = new Regex($"^.+ added (.+) to the group.");
 
             Match joinedMatch = joinedRegex.Match(activity.Text);
-            if (joinedMatch.Success && joinedMatch.Groups.Count != 0) return joinedMatch.Groups[0].Value;
+            if (joinedMatch.Success && joinedMatch.Groups.Count >= 2) return joinedMatch.Groups[1].Value;
 
             Match addedMatch = addedRegex.Match(activity.Text);
-            if (addedMatch.Success && addedMatch.Groups.Count != 0) return addedMatch.Groups[0].Value;
+            if (addedMatch.Success && addedMatch.Groups.Count >= 2) return addedMatch.Groups[1].Value;
             
             return null;
         }
