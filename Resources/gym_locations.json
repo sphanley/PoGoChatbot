@@ -1,0 +1,316 @@
+[
+    {
+        "name": "1933 CHURCH",
+        "description": "Cannot be reach via car - Causes low raid turnout",
+        "location": {
+            "latitude": "41.5034997", "longitude": "-81.5939203" 
+        }
+    },
+    {
+        "name": "A.D. 1950 Heights Branch YMCA",
+        "description": "AKA: Dobama Theater",
+        "location": {
+            "latitude": "41.4954932", "longitude": "-81.5654341" 
+        }
+    },
+    {
+        "name": "Bird Friendly Habitat",
+        "location": {
+            "latitude": "41.4949954", "longitude": "-81.5806165" 
+        }
+    },
+    {
+        "name": "Bumblebee",
+        "location": {
+            "latitude": "41.5008749", "longitude": "-81.5651858" 
+        }
+    },
+    {
+        "name": "Cain Park",
+        "isEXEligible": true,
+        "location": {
+            "latitude": "41.5064714", "longitude": "-81.5604621" 
+        }
+    },
+    {
+        "name": "Cedar Avenue Mural",
+        "location": {
+            "latitude": "41.5012536", "longitude": "-81.5931137" 
+        }
+    },
+    {
+        "name": "Cedar Fairmount Business District",
+        "location": {
+            "latitude": "41.5012106", "longitude": "-81.5897705" 
+        }
+    },
+    {
+        "name": "Cedar Lee Theater",
+        "location": {
+            "latitude": "41.5010055", "longitude": "-81.5652931" 
+        }
+    },
+    {
+        "name": "Christ Our Redeemer Church",
+        "location": {
+            "latitude": "41.5125382", "longitude": "-81.5725181" 
+        }
+    },
+    {
+        "name": "Church of Christ",
+        "location": {
+            "latitude": "41.5206008", "longitude": "-81.5563266" 
+        }
+    },
+    {
+        "name": "Cleveland Heights-University Heights Public Library",
+        "location": {
+            "latitude": "41.4957825", "longitude": "-81.5649459" 
+        }
+    },
+    {
+        "name": "Coventry Arch",
+        "description": "Potential EX Raid Location",
+        "isEXEligible": true,
+        "location": {
+            "latitude": "41.5078565", "longitude": "-81.5795351" 
+        }
+    },
+    {
+        "name": "Cumberland Pool",
+        "description": "Potential EX Raid Location",
+        "isEXEligible": true,
+        "location": {
+            "latitude": "41.5118735", "longitude": "-81.5687978" 
+        }
+    },
+    {
+        "name": "Disciples Christian Church",
+        "description": "Cannot be reach via car - Causes low raid turnout",
+        "location": {
+            "latitude": "41.520774", "longitude": "-81.5488082" 
+        }
+    },
+    {
+        "name": "Eagle Statue",
+        "location": {
+            "latitude": "41.5048593", "longitude": "-81.5801724" 
+        }
+    },
+    {
+        "name": "Euclid Golf Historic District",
+        "location": {
+            "latitude": "41.4984775", "longitude": "-81.5801569" 
+        }
+    },
+    {
+        "name": "Forest Hill Church",
+        "location": {
+            "latitude": "41.5190748", "longitude": "-81.5699495" 
+        }
+    },
+    {
+        "name": "Forest Hill Park",
+        "isEXEligible": true,
+        "location": {
+            "latitude": "41.5230243", "longitude": "-81.5733638" 
+        }
+    },
+    {
+        "name": "Free Little Library",
+        "location": {
+            "latitude": "41.495958", "longitude": "-81.5820074" 
+        }
+    },
+    {
+        "name": "Jacob Russell",
+        "description": "Cannot be reach via parked car - Causes low raid turnout",
+        "location": {
+            "latitude": "41.4826975", "longitude": "-81.5636295" 
+        }
+    },
+    {
+        "name": "Kenilworth Park Playground",
+        "location": {
+            "latitude": "41.5074027", "longitude": "-81.5911946" 
+        }
+    },
+    {
+        "name": "Larchmere Community Sign",
+        "location": {
+            "latitude": "41.4931606", "longitude": "-81.6009978" 
+        }
+    },
+    {
+        "name": "Lower Shaker Lake",
+        "location": {
+            "latitude": "41.4906796", "longitude": "-81.5821296" 
+        }
+    },
+    {
+        "name": "Memorial Dave Black",
+        "location": {
+            "latitude": "41.5270392", "longitude": "-81.5746315" 
+        }
+    },
+    {
+        "name": "Melt",
+        "location": {
+            "latitude": "41.5014651", "longitude": "-81.5561845" 
+        }
+    },
+    {
+        "name": "Nature Center",
+        "location": {
+            "latitude": "41.4850939", "longitude": "-81.5736153" 
+        }
+    },
+    {
+        "name": "New Song Church",
+        "description": "Please avoid if possible. Church-Goers have asked PoGo players to stay away.",
+        "location": {
+            "latitude": "41.5137857", "longitude": "-81.5538883" 
+        }
+    },
+    {
+        "name": "Nottingham Bell Tower",
+        "location": {
+            "latitude": "41.5033421", "longitude": "-81.5993688" 
+        }
+    },
+    {
+        "name": "Picnic Shelter 1",
+        "location": {
+            "latitude": "41.5198621", "longitude": "-81.572004" 
+        }
+    },
+    {
+        "name": "Purvis Park",
+        "location": {
+            "latitude": "41.5012824", "longitude": "-81.5267189" 
+        }
+    },
+    {
+        "name": "Rockefeller's Eagle Plaza",
+        "location": {
+            "latitude": "41.5160392", "longitude": "-81.5688503" 
+        }
+    },
+    {
+        "name": "Shaker Heights City Sign",
+        "location": {
+            "latitude": "41.4918105", "longitude": "-81.5928439" 
+        }
+    },
+    {
+        "name": "Shaker Lake Bioswale Plaque",
+        "location": {
+            "latitude": "41.4879024", "longitude": "-81.5812878" 
+        }
+    },
+    {
+        "name": "Sister Cities Rose Garden",
+        "isEXEligible": true,
+        "location": {
+            "latitude": "41.4826504", "longitude": "-81.5554632" 
+        }
+    },
+    {
+        "name": "St Ann's Church",
+        "location": {
+            "latitude": "41.5009524", "longitude": "-81.5797599" 
+        }
+    },
+    {
+        "name": "Spirit Corner",
+        "location": {
+            "latitude": "41.5111688", "longitude": "-81.577391" 
+        }
+    },
+    {
+        "name": "Sprint Store",
+        "description": "Potential EX Raid Location",
+        "isEXEligible": true,
+        "location": {
+            "latitude": "41.5022908", "longitude": "-81.5384437" 
+        }
+    },
+    {
+        "name": "Starbucks",
+        "description": "Potential EX Raid Location",
+        "location": {
+            "latitude": "41.5017525", "longitude": "-81.5383793" 
+        }
+    },
+    {
+        "name": "Taylor Road Synagogue",
+        "location": {
+            "latitude": "41.5062344", "longitude": "-81.5561268" 
+        }
+    },
+    {
+        "name": "The Arthur G. McKee House",
+        "description": "Easy to raid with street parking - but almost no on has eyes on it.",
+        "location": {
+            "latitude": "41.4974083", "longitude": "-81.6030981" 
+        }
+    },
+    {
+        "name": "The Elephant Stairs",
+        "location": {
+            "latitude": "41.5009563", "longitude": "-81.6005917" 
+        }
+    },
+    {
+        "name": "Tooth Sculpture",
+        "location": {
+            "latitude": "41.4996636", "longitude": "-81.5562066" 
+        }
+    },
+    {
+        "name": "Treehouse at Horseshoe Lakes",
+        "description": "Almost never raided at by this group.",
+        "location": {
+            "latitude": "41.482601", "longitude": "-81.5582007" 
+        }
+    },
+    {
+        "name": "Twin Flags Building",
+        "location": {
+            "latitude": "41.5081324", "longitude": "-81.589061" 
+        }
+    },
+    {
+        "name": "Unitarian Universalist Society of Cleveland",
+        "location": {
+            "latitude": "41.508289", "longitude": "-81.5826344" 
+        }
+    },
+    {
+        "name": "Unity Center Church",
+        "description": "Will hit if desperate for raids",
+        "location": {
+            "latitude": "41.4866826", "longitude": "-81.5557187" 
+        }
+    },
+    {
+        "name": "University Square Bell",
+        "isEXEligible": false,
+        "location": {
+            "latitude": "41.501182", "longitude": "-81.5360726" 
+        }
+    },
+    {
+        "name": "Veterans of the Vietnam and Korean Wars Memorial",
+        "description": "AKA - Veteran's",
+        "location": {
+            "latitude": "41.5143329", "longitude": "-81.5713379" 
+        }
+    },
+    {
+        "name": "Walmart Gazebo",
+        "location": {
+            "latitude": "41.509013", "longitude": "-81.5385851" 
+        }
+    }
+]
