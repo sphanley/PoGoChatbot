@@ -1,5 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Linq;
+using System.Text.RegularExpressions;
 using Microsoft.Bot.Schema;
+using Newtonsoft.Json.Linq;
+using PoGoChatbot.Models;
 
 namespace PoGoChatbot
 {
@@ -19,6 +22,12 @@ namespace PoGoChatbot
             if (addedMatch.Success && addedMatch.Groups.Count >= 2) return addedMatch.Groups[1].Value;
             
             return null;
+        }
+
+        public static bool IsCreatedPoll(this IMessageActivity activity)
+        {
+            JArray channelData;
+            return (activity.TryGetChannelData(out channelData) && channelData.Any(token => token.ToObject<GroupMeAttachment>().Type == "poll"));                
         }
     }
 }

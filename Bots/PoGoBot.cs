@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using DuoVia.FuzzyStrings;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
-using Newtonsoft.Json;
-using PoGoChatbot.Models;
 
 namespace PoGoChatbot.Bots
 {
@@ -21,15 +17,18 @@ namespace PoGoChatbot.Bots
 
             var addedMemberName = turnContext.Activity.getAddedGroupMeMemberName();
 
-            if (!String.IsNullOrEmpty(addedMemberName))
+            if (!string.IsNullOrEmpty(addedMemberName))
             {
                 await turnContext.SendActivityAsync(MessageFactory.Text($"Welcome, {addedMemberName}! We're always excited to have a new trainer join our community!"), cancellationToken);
                 await turnContext.SendActivityAsync(MessageFactory.Text($"I've got a few helpful resources to help you get started. To start, here's a map of the gyms where we typically raid: https://tinyurl.com/y3rddyjd. If you need this link later, just say \"!map\"."), cancellationToken);
             }
-
-            if (turnContext.Activity.Text.StartsWith("!", StringComparison.Ordinal))
+            else if (turnContext.Activity.Text.StartsWith("!", StringComparison.Ordinal))
             {
                 await HandleInvocationActivity(turnContext, cancellationToken);
+            }
+            else if (turnContext.Activity.IsCreatedPoll())
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Text(Constants.VoteAndLikeReminder), cancellationToken);
             }
         }
 
@@ -84,6 +83,22 @@ namespace PoGoChatbot.Bots
                                 var msg = MessageFactory.Text(messageText);
 
                                 await turnContext.SendActivityAsync(msg);
+
+                                // TODO: Use below code if Microsoft acknowledges and fixes https://github.com/microsoft/BotFramework-Services/issues/101
+                                //var msg = MessageFactory.Text(messageText);
+                                //var channelData = new GroupMeChannelData
+                                //{
+                                //    new GroupMeLocationAttachment()
+                                //    {
+                                //        Type = "location",
+                                //        Latitude = gym.Location.Latitude,
+                                //        Longitude = gym.Location.Longitude,
+                                //        Name = gym.Name
+                                //    }
+                                //};
+                                //msg.ChannelData = channelData;
+
+                                //await turnContext.SendActivityAsync(msg);
                             }
                             if (gymMatches.Count > 1)
                             {
