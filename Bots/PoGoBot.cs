@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
+using PoGoChatbot.Models;
 
 namespace PoGoChatbot.Bots
 {
@@ -90,7 +91,6 @@ namespace PoGoChatbot.Bots
                                 //{
                                 //    new GroupMeLocationAttachment()
                                 //    {
-                                //        Type = "location",
                                 //        Latitude = gym.Location.Latitude,
                                 //        Longitude = gym.Location.Longitude,
                                 //        Name = gym.Name
