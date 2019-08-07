@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
-using PoGoChatbot.Models;
 
 namespace PoGoChatbot.Bots
 {
@@ -20,8 +19,14 @@ namespace PoGoChatbot.Bots
 
             if (!string.IsNullOrEmpty(addedMemberName))
             {
-                await turnContext.SendActivityAsync(MessageFactory.Text($"Welcome, {addedMemberName}! We're always excited to have a new trainer join our community!"), cancellationToken);
-                await turnContext.SendActivityAsync(MessageFactory.Text($"I've got a few helpful resources to help you get started. To start, here's a map of the gyms where we typically raid: https://tinyurl.com/y3rddyjd. If you need this link later, just say \"!map\"."), cancellationToken);
+                await turnContext.SendActivitiesAsync(new[] {
+                        MessageFactory.Text($"Welcome, {addedMemberName}! We're always excited to have a new trainer join our community! I've got a few helpful tips and to help you get started."),
+                        MessageFactory.Text($"To start, if you haven't already, you'll want to use the \"Change Nickname\" option from the setting menu to change your name to use our standard format, \"Name {{TrainerName}} {{Team}} {{Level}}\".\n\n" +
+                            "For example, I'm a bot, and I was created by @Sam (sphanley) Valor 40.\n\n" +
+                            "Using this format helps us recognize each other, and estimate how many people are needed for a raid!"),
+                        MessageFactory.Text("Next, here's a map of the gyms where we typically raid: https://tinyurl.com/y3rddyjd. If you need this link later, just say \"!map\"."),
+                        MessageFactory.Text("I can also provide on-demand information! For example, you can say \"!whereis {{Gym Name}}\" to get the location of a gym. For more commands and usage guidance, say \"!help\". And have fun!")
+                    }, cancellationToken);
             }
             else if (turnContext.Activity.Text.StartsWith("!", StringComparison.Ordinal))
             {
@@ -39,8 +44,14 @@ namespace PoGoChatbot.Bots
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"Welcome, {member.Name}! We're always excited to have a new trainer join our community!"), cancellationToken);
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"I've got a few helpful resources to help you get started. To start, here's a map of the gyms where we typically raid: https://tinyurl.com/y3rddyjd. If you need this link later, just say \"!map\"."), cancellationToken);
+                    await turnContext.SendActivitiesAsync(new[] {
+                        MessageFactory.Text($"Welcome, {member.Name}! We're always excited to have a new trainer join our community! I've got a few helpful tips and to help you get started."),
+                        MessageFactory.Text($"To start, if you haven't already, you'll want to use the \"Change Nickname\" option from the settings menu to set your name to use our standard format, \"Name {{TrainerName}} {{Team}} {{Level}}\".\n\n" +
+                            "For example, I'm a bot, and I was created by @Sam (sphanley) Valor 40.\n\n" +
+                            "Using this format helps us recognize each other, and estimate how many people are needed for a raid!"),
+                        MessageFactory.Text("Next, here's a map of the gyms where we typically raid: https://tinyurl.com/y3rddyjd. If you need this link later, just say \"!map\"."),
+                        MessageFactory.Text("I can also provide on-demand information! For example, you can say \"!whereis {{Gym Name}}\" to get the location of a gym. For more commands and usage guidance, say \"!help\". And have fun!")
+                    }, cancellationToken);
                 }
             }
         }
@@ -107,6 +118,11 @@ namespace PoGoChatbot.Bots
                         }
 
                     }
+                    break;
+                case "!help":
+                    await turnContext.SendActivityAsync(MessageFactory.Text("• For the map of all gyms within this group's area, say \"!map\".\n\n"
+                        + "• For the location of a specific gym, say \"!whereis {{Gym Name}}\" - for example, \"!whereis Spirit Corner\" or \"!whereis Coventry Arch\".\n\n"
+                        + "• For this list, say \"!help\"."), cancellationToken);
                     break;
             }
         }
