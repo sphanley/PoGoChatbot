@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
+using PoGoChatbot.Models;
 
 namespace PoGoChatbot.Bots
 {
@@ -92,24 +93,24 @@ namespace PoGoChatbot.Bots
                                 var messageText = $"Here's the location of {gym.Name}.";
                                 if (gym.IsEXEligible) messageText += " It's an EX Raid eligible gym!";
                                 messageText += $" https://www.google.com/maps/search/?api=1&query={gym.Location.Latitude},{gym.Location.Longitude}";
+
+                                // TODO: update below code if Microsoft acknowledges and/or fixes https://github.com/microsoft/BotFramework-Services/issues/101
                                 var msg = MessageFactory.Text(messageText);
+                                var channelData = new GroupMeChannelData()
+                                {
+                                    Attachments = new GroupMeAttachments
+                                    {
+                                        new GroupMeLocationAttachment()
+                                        {
+                                            Latitude = gym.Location.Latitude,
+                                            Longitude = gym.Location.Longitude,
+                                            Name = gym.Name
+                                        }
+                                    }                                
+                                };
+                                msg.ChannelData = channelData;
 
                                 await turnContext.SendActivityAsync(msg);
-
-                                // TODO: Use below code if Microsoft acknowledges and fixes https://github.com/microsoft/BotFramework-Services/issues/101
-                                //var msg = MessageFactory.Text(messageText);
-                                //var channelData = new GroupMeChannelData
-                                //{
-                                //    new GroupMeLocationAttachment()
-                                //    {
-                                //        Latitude = gym.Location.Latitude,
-                                //        Longitude = gym.Location.Longitude,
-                                //        Name = gym.Name
-                                //    }
-                                //};
-                                //msg.ChannelData = channelData;
-
-                                //await turnContext.SendActivityAsync(msg);
                             }
                             if (gymMatches.Count > 1)
                             {
