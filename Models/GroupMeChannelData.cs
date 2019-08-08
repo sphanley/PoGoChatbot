@@ -1,23 +1,12 @@
 ﻿using System;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace PoGoChatbot.Models
 {
     [Serializable]
     public class GroupMeChannelData
     {
-        [JsonProperty("attachments")]
-        public GroupMeAttachments Attachments { get; set; }
-    }
-
-    [Serializable]
-    public class GroupMeAttachments : JArray
-    {
-        public void Add(GroupMeAttachment attachment)
-        {
-            Add(JToken.FromObject(attachment));
-        }
+        public GroupMeAttachment Attachment { get; set; }
     }
 
     [Serializable]

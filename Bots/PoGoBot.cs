@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
+using Newtonsoft.Json.Linq;
 using PoGoChatbot.Models;
 
 namespace PoGoChatbot.Bots
@@ -80,7 +81,7 @@ namespace PoGoChatbot.Bots
 
                         if (gymMatches.Count == 0)
                         {
-                            await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, but I couldn't find a gym called \"{searchTerm}\"."), cancellationToken);
+                            await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, but I couldn't find a gym called {searchTerm}."), cancellationToken);
                         }
                         else
                         {
@@ -94,23 +95,25 @@ namespace PoGoChatbot.Bots
                                 if (gym.IsEXEligible) messageText += " It's an EX Raid eligible gym!";
                                 messageText += $" https://www.google.com/maps/search/?api=1&query={gym.Location.Latitude},{gym.Location.Longitude}";
 
-                                // TODO: update below code if Microsoft acknowledges and/or fixes https://github.com/microsoft/BotFramework-Services/issues/101
-                                var msg = MessageFactory.Text(messageText);
-                                var channelData = new GroupMeChannelData()
-                                {
-                                    Attachments = new GroupMeAttachments
-                                    {
-                                        new GroupMeLocationAttachment()
-                                        {
-                                            Latitude = gym.Location.Latitude,
-                                            Longitude = gym.Location.Longitude,
-                                            Name = gym.Name
-                                        }
-                                    }                                
-                                };
-                                msg.ChannelData = channelData;
+                                var textMsg = MessageFactory.Text(messageText);
 
-                                await turnContext.SendActivityAsync(msg);
+                                await turnContext.SendActivityAsync(textMsg, cancellationToken);
+
+                                // TODO: update below code if Microsoft adequately resolves https://github.com/microsoft/BotFramework-Services/issues/101
+                                //var attachmentMsg = MessageFactory.Attachment(new Attachment("image/png", "https://i.imgur.com/vta1imR.png"));
+                                //var channelData = new GroupMeChannelData
+                                //{ 
+                                //    Attachment = new GroupMeLocationAttachment
+                                //    {
+                                //        Latitude = gym.Location.Latitude,
+                                //        Longitude = gym.Location.Longitude,
+                                //        Name = gym.Name
+                                //    }
+                                //};
+                                //attachmentMsg.ChannelData = channelData;
+
+                                //await turnContext.SendActivitiesAsync(new[] { textMsg, attachmentMsg }, cancellationToken);
+
                             }
                             if (gymMatches.Count > 1)
                             {
