@@ -20,14 +20,14 @@ namespace PoGoChatbot
 
             Match addedMatch = addedRegex.Match(activity.Text);
             if (addedMatch.Success && addedMatch.Groups.Count >= 2) return addedMatch.Groups[1].Value;
-            
+
             return null;
         }
 
         public static bool IsCreatedPoll(this IMessageActivity activity)
         {
             JArray channelData;
-            return (activity.TryGetChannelData(out channelData) && channelData.Any(token => token.ToObject<GroupMeAttachment>().Type == "poll"));                
+            return (activity.TryGetChannelData(out channelData) && channelData.Any(token => token.ToObject<GroupMeAttachment>().Type == "poll"));
         }
     }
 }
