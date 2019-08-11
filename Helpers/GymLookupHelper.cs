@@ -34,7 +34,7 @@ namespace PoGoChatbot.Helpers
             // If none found, search for gyms with names which contain all of the word(s) in the search term, ignoring case or punctuation
             var gymMatches = gyms.Where(gym =>
             {
-                var normalizedSearchTerm = searchTerm.Replace("\\p{P}+", "");
+                var normalizedSearchTerm = searchTerm.ToLowerInvariant().Replace("\\p{P}+", "");
                 var normalizedGymName = gym.Name.ToLowerInvariant().Replace("\\p{P}+", "");
 
                 var wordsInSearchTerm = normalizedSearchTerm.Split(" ");
