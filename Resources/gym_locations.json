@@ -1,14 +1,15 @@
 [
     {
         "name": "1933 CHURCH",
-        "description": "Cannot be reach via car - Causes low raid turnout",
         "location": {
             "latitude": "41.5034997", "longitude": "-81.5939203" 
         }
     },
     {
         "name": "A.D. 1950 Heights Branch YMCA",
-        "description": "AKA: Dobama Theater",
+        "aliases":  [
+            "Dobama"
+        ],
         "location": {
             "latitude": "41.4954932", "longitude": "-81.5654341" 
         }
@@ -27,7 +28,7 @@
     },
     {
         "name": "Cain Park",
-        "isEXEligible": true,
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.5064714", "longitude": "-81.5604621" 
         }
@@ -70,23 +71,20 @@
     },
     {
         "name": "Coventry Arch",
-        "description": "Potential EX Raid Location",
-        "isEXEligible": true,
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.5078565", "longitude": "-81.5795351" 
         }
     },
     {
         "name": "Cumberland Pool",
-        "description": "Potential EX Raid Location",
-        "isEXEligible": true,
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.5118735", "longitude": "-81.5687978" 
         }
     },
     {
         "name": "Disciples Christian Church",
-        "description": "Cannot be reach via car - Causes low raid turnout",
         "location": {
             "latitude": "41.520774", "longitude": "-81.5488082" 
         }
@@ -111,20 +109,22 @@
     },
     {
         "name": "Forest Hill Park",
-        "isEXEligible": true,
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.5230243", "longitude": "-81.5733638" 
         }
     },
     {
         "name": "Free Little Library",
+        "aliases":  [
+            "FLL"
+        ],
         "location": {
             "latitude": "41.495958", "longitude": "-81.5820074" 
         }
     },
     {
         "name": "Jacob Russell",
-        "description": "Cannot be reach via parked car - Causes low raid turnout",
         "location": {
             "latitude": "41.4826975", "longitude": "-81.5636295" 
         }
@@ -167,7 +167,7 @@
     },
     {
         "name": "New Song Church",
-        "description": "Please avoid if possible. Church-Goers have asked PoGo players to stay away.",
+        "description": "Please note that New Song churchgoers have politely asked members of our group to avoid gathering here, as it has made their congregants feel uncomfortable. As such, group policy is to avoid raiding at New Song.",
         "location": {
             "latitude": "41.5137857", "longitude": "-81.5538883" 
         }
@@ -210,7 +210,7 @@
     },
     {
         "name": "Sister Cities Rose Garden",
-        "isEXEligible": true,
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.4826504", "longitude": "-81.5554632" 
         }
@@ -229,15 +229,14 @@
     },
     {
         "name": "Sprint Store",
-        "description": "Potential EX Raid Location",
-        "isEXEligible": true,
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.5022908", "longitude": "-81.5384437" 
         }
     },
     {
         "name": "Starbucks",
-        "description": "Potential EX Raid Location",
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.5017525", "longitude": "-81.5383793" 
         }
@@ -250,7 +249,6 @@
     },
     {
         "name": "The Arthur G. McKee House",
-        "description": "Easy to raid with street parking - but almost no on has eyes on it.",
         "location": {
             "latitude": "41.4974083", "longitude": "-81.6030981" 
         }
@@ -269,7 +267,6 @@
     },
     {
         "name": "Treehouse at Horseshoe Lakes",
-        "description": "Almost never raided at by this group.",
         "location": {
             "latitude": "41.482601", "longitude": "-81.5582007" 
         }
@@ -282,27 +279,33 @@
     },
     {
         "name": "Unitarian Universalist Society of Cleveland",
+        "aliases": [
+            "UU",
+            "UU Society",
+            "UU Church"
+        ],
         "location": {
             "latitude": "41.508289", "longitude": "-81.5826344" 
         }
     },
     {
         "name": "Unity Center Church",
-        "description": "Will hit if desperate for raids",
         "location": {
             "latitude": "41.4866826", "longitude": "-81.5557187" 
         }
     },
     {
         "name": "University Square Bell",
-        "isEXEligible": false,
+        "is_ex_eligible": false,
         "location": {
             "latitude": "41.501182", "longitude": "-81.5360726" 
         }
     },
     {
         "name": "Veterans of the Vietnam and Korean Wars Memorial",
-        "description": "AKA - Veteran's",
+        "aliases": [
+            "Vets"
+        ],
         "location": {
             "latitude": "41.5143329", "longitude": "-81.5713379" 
         }

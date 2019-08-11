@@ -10,7 +10,7 @@ namespace PoGoChatbot.Helpers
 {
     public class PoGoApiHelper
     {
-        private static HttpClient poGoApiClient = new HttpClient { BaseAddress = new Uri("https://pogoapi.net/") };
+        private static readonly HttpClient poGoApiClient = new HttpClient { BaseAddress = new Uri("https://pogoapi.net/") };
         private static List<Pokemon> pokemonList;
         private static Dictionary<string, TypeEffectiveness> typeEffectivenessList;
 

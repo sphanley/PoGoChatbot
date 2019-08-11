@@ -15,7 +15,7 @@ namespace PoGoChatbot.Helpers
 {
     public static class InvocationHelper
     {
-        private static HttpClient httpClient = new HttpClient { BaseAddress = new Uri("https://api.groupme.com/") };
+        private static readonly HttpClient httpClient = new HttpClient { BaseAddress = new Uri("https://api.groupme.com/") };
 
         public static async Task HandleInvocationActivity(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
@@ -145,6 +145,10 @@ namespace PoGoChatbot.Helpers
                         var messageJson = new StringContent(message.ToString(), Encoding.UTF8, "application/json");
                         _ = httpClient.PostAsync("v3/bots/post", messageJson);
                         #endregion
+                        if(!string.IsNullOrEmpty(gym.Description))
+                        {
+                            await turnContext.SendActivityAsync(MessageFactory.Text(gym.Description), cancellationToken);
+                        }
                     }
                     if (gymMatches.Count > 1)
                     {

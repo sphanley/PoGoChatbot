@@ -27,6 +27,10 @@ namespace PoGoChatbot.Helpers
             var exactMatch = gyms.Where(gym => gym.Name.ToLowerInvariant().Equals(searchTerm.ToLowerInvariant()));
             if (exactMatch.Any()) return exactMatch.ToList();
 
+            // Search for gyms with an alias which matches exactly
+            var aliasMatch = gyms.Where(gym => gym.Aliases.Any(a => a.ToLowerInvariant().Equals(searchTerm.ToLowerInvariant())));
+            if (aliasMatch.Any()) return aliasMatch.ToList();
+
             // If none found, search for gyms with names which match approximately
             var fuzzyMatches = gyms.Where(gym => gym.Name.FuzzyEquals(searchTerm));
             if (fuzzyMatches.Any()) return fuzzyMatches.ToList();
