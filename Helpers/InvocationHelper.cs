@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 using Newtonsoft.Json.Linq;
+using PoGoChatbot.Extensions;
 using PoGoChatbot.Models;
 
 namespace PoGoChatbot.Helpers
@@ -23,6 +24,9 @@ namespace PoGoChatbot.Helpers
                 case "!map":
                     await HandleMapInvocation(turnContext, cancellationToken);
                     break;
+                case "!type":
+                    await HandleTypeLookupInvocation(turnContext, cancellationToken);
+                    break;
                 case "!whereis":
                     await HandleWhereIsInvocation(turnContext, cancellationToken);
                     break;
@@ -37,6 +41,7 @@ namespace PoGoChatbot.Helpers
             await turnContext.SendActivityAsync(MessageFactory.Text(
                 "• For the map of all gyms within this group's area, say \"!map\".\n\n" +
                 "• For the location of a specific gym, say \"!whereis {{Gym Name}}\" - for example, \"!whereis Spirit Corner\" or \"!whereis Coventry Arch\".\n\n" +
+                "• For the type(s), strengths and weaknesses of a specific pokemon, say \"!type {{Pokemon Name}}\" or \"!type {{Pokemon number}}\"  - for example, \"!type Pikachu\" or \"!type 25\".\n\n" +
                 "• For this list, say \"!help\"."
             ), cancellationToken);
         }
@@ -44,6 +49,41 @@ namespace PoGoChatbot.Helpers
         private static async Task HandleMapInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             await turnContext.SendActivityAsync(MessageFactory.Text(Constants.MapMessage), cancellationToken);
+        }
+
+        private static async Task HandleTypeLookupInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        {
+            Regex typeLookupRegex = new Regex($"^!type \"?([^\"]+)\"?$");
+            Match typeLookupMatch = typeLookupRegex.Match(turnContext.Activity.Text);
+            var searchTerm = (typeLookupMatch.Success && typeLookupMatch.Groups.Count >= 2) ? typeLookupMatch.Groups[1].Value : "";
+
+            var pokemon = await PoGoApiHelper.GetPokemonType(searchTerm);
+            if (pokemon != null)
+            {
+                var typeOrTypes = pokemon.Type.Length == 1 ? "type" : "types";
+                var messageText = $"{pokemon.Name} has the {typeOrTypes} {string.Join(" and ", pokemon.Type)}. That means it is:\n\n";
+
+                //TODO: Consider redesigning this to be less complex and not reliant on Reflection
+                // Perhaps use a custom deserializer for the type_effectiveness.json so that it's read into an array of dictionaries or similar rather than objects, to aid in iterating over info?
+                var properties = typeof(TypeEffectiveness).GetProperties();
+                var doubleResistantAgainst = properties.Where(p => Math.Abs((double)p.GetValue(pokemon.TypeEffectiveness) - (0.625 * 0.625)) < 0.00001).Select(p => p.Name);
+                if(doubleResistantAgainst.Any()) messageText += $"• Double resistant against {doubleResistantAgainst.CommaSeparateWithAnd()}.\n\n";
+                
+                var resistantAgainst = properties.Where(p => Math.Abs((double)p.GetValue(pokemon.TypeEffectiveness) - 0.625) < 0.00001).Select(p => p.Name);
+                if(resistantAgainst.Any()) messageText += $"• Resistant against {resistantAgainst.CommaSeparateWithAnd()}.\n\n";
+
+                var weakAgainst = properties.Where(p => Math.Abs((double)p.GetValue(pokemon.TypeEffectiveness) - 1.6) < 0.00001).Select(p => p.Name);
+                if(weakAgainst.Any()) messageText += $"• Weak against {weakAgainst.CommaSeparateWithAnd()}.\n\n";
+
+                var doubleWeakAgainst = properties.Where(p => Math.Abs((double)p.GetValue(pokemon.TypeEffectiveness) - (1.6 * 1.6)) < 0.00001).Select(p => p.Name);
+                if(doubleWeakAgainst.Any()) messageText += $"• Double weak against {doubleWeakAgainst.CommaSeparateWithAnd()}.\n\n";
+
+                await turnContext.SendActivityAsync(MessageFactory.Text(messageText));
+            }
+            else
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, I couldn't find a pokemon with the name or number \"{searchTerm}\"."));
+            }
         }
 
         private static async Task HandleWhereIsInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -62,13 +102,13 @@ namespace PoGoChatbot.Helpers
 
                 if (gymMatches.Count == 0)
                 {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, but I couldn't find a gym called {searchTerm}."), cancellationToken);
+                    await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, but I couldn't find a gym called \"{searchTerm}\"."), cancellationToken);
                 }
                 else
                 {
                     if (gymMatches.Count > 1)
                     {
-                        await turnContext.SendActivityAsync(MessageFactory.Text($"I found more than one gym with names similar to {searchTerm}:"), cancellationToken);
+                        await turnContext.SendActivityAsync(MessageFactory.Text($"I found more than one gym with names similar to \"{searchTerm}\":"), cancellationToken);
                     }
                     foreach (var gym in gymMatches.Take(3))
                     {
