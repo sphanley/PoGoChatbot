@@ -1,14 +1,21 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
+using Newtonsoft.Json.Linq;
+using PoGoChatbot.Models;
 
 namespace PoGoChatbot.Helpers
 {
     public static class InvocationHelper
     {
+        private static HttpClient httpClient = new HttpClient { BaseAddress = new Uri("https://api.groupme.com/") };
+
         public static async Task HandleInvocationActivity(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             switch (turnContext.Activity.Text.Split(" ")[0])
@@ -67,27 +74,27 @@ namespace PoGoChatbot.Helpers
                     {
                         var messageText = $"Here's the location of {gym.Name}.";
                         if (gym.IsEXEligible) messageText += " It's an EX Raid eligible gym!";
-                        messageText += $" https://www.google.com/maps/search/?api=1&query={gym.Location.Latitude},{gym.Location.Longitude}";
 
-                        var textMsg = MessageFactory.Text(messageText);
+                        #region - This is a temporary hack to send the Location attachment while waiting for a fix for https://github.com/microsoft/BotFramework-Services/issues/101
+                        var message = JObject.FromObject(new
+                        {
+                            text = messageText,
+                            bot_id = Environment.GetEnvironmentVariable("GroupMeBotId"),
+                            attachments = new[] {
+                                new GroupMeLocationAttachment
+                                {
+                                    Latitude = gym.Location.Latitude,
+                                    Longitude = gym.Location.Longitude,
+                                    Name = gym.Name
+                                }
+                            }
+                        });
 
-                        await turnContext.SendActivityAsync(textMsg, cancellationToken);
+                        var messageJson = new StringContent(message.ToString(), Encoding.UTF8, "application/json");
 
-                        // TODO: update below code if Microsoft adequately resolves https://github.com/microsoft/BotFramework-Services/issues/101
-                        //var attachmentMsg = MessageFactory.Attachment(new Attachment("image/png", "https://i.imgur.com/vta1imR.png"));
-                        //var channelData = new GroupMeChannelData
-                        //{ 
-                        //    Attachment = new GroupMeLocationAttachment
-                        //    {
-                        //        Latitude = gym.Location.Latitude,
-                        //        Longitude = gym.Location.Longitude,
-                        //        Name = gym.Name
-                        //    }
-                        //};
-                        //attachmentMsg.ChannelData = channelData;
 
-                        //await turnContext.SendActivitiesAsync(new[] { textMsg, attachmentMsg }, cancellationToken);
-
+                        _ = httpClient.PostAsync("v3/bots/post", messageJson);
+                        #endregion
                     }
                     if (gymMatches.Count > 1)
                     {
