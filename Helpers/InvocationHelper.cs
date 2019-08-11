@@ -21,6 +21,10 @@ namespace PoGoChatbot.Helpers
         {
             switch (turnContext.Activity.Text.Split(" ")[0])
             {
+                case "!bosses":
+                case "!raidbosses":
+                    await HandleRaidBossesInvocation(turnContext, cancellationToken);
+                    break;
                 case "!map":
                     await HandleMapInvocation(turnContext, cancellationToken);
                     break;
@@ -36,12 +40,15 @@ namespace PoGoChatbot.Helpers
             }
         }
 
+        #region Invocation Handler Methods
+
         private static async Task HandleHelpInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             await turnContext.SendActivityAsync(MessageFactory.Text(
                 "• For the map of all gyms within this group's area, say \"!map\".\n\n" +
-                "• For the location of a specific gym, say \"!whereis {{Gym Name}}\" - for example, \"!whereis Spirit Corner\" or \"!whereis Coventry Arch\".\n\n" +
-                "• For the type(s), strengths and weaknesses of a specific pokemon, say \"!type {{Pokemon Name}}\" or \"!type {{Pokemon number}}\"  - for example, \"!type Pikachu\" or \"!type 25\".\n\n" +
+                "• For the location of a specific gym, say \"!whereis {Gym Name}\" - for example, \"!whereis Spirit Corner\" or \"!whereis Coventry Arch\".\n\n" +
+                "• For the type(s), strengths and weaknesses of a specific pokemon, say \"!type {Pokemon Name}\" or \"!type {Pokemon number}\"  - for example, \"!type Pikachu\" or \"!type 25\".\n\n" +
+                "• For a link to the list of known current raid bosses , say \"!raidbosses\" or \"!bosses\".\n\n" +
                 "• For this list, say \"!help\"."
             ), cancellationToken);
         }
@@ -49,6 +56,11 @@ namespace PoGoChatbot.Helpers
         private static async Task HandleMapInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             await turnContext.SendActivityAsync(MessageFactory.Text(Constants.MapMessage), cancellationToken);
+        }
+
+        private static async Task HandleRaidBossesInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        {
+            await turnContext.SendActivityAsync(MessageFactory.Text(Constants.RaidBossesMessage), cancellationToken);
         }
 
         private static async Task HandleTypeLookupInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -82,7 +94,7 @@ namespace PoGoChatbot.Helpers
             }
             else
             {
-                await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, I couldn't find a pokemon with the name or number \"{searchTerm}\"."));
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, I couldn't find a pokemon with the name or number \"{searchTerm}\"."), cancellationToken);
             }
         }
 
@@ -131,8 +143,6 @@ namespace PoGoChatbot.Helpers
                         });
 
                         var messageJson = new StringContent(message.ToString(), Encoding.UTF8, "application/json");
-
-
                         _ = httpClient.PostAsync("v3/bots/post", messageJson);
                         #endregion
                     }
@@ -144,5 +154,7 @@ namespace PoGoChatbot.Helpers
 
             }
         }
+
+        #endregion
     }
 }
