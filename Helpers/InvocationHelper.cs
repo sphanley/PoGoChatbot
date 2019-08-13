@@ -107,13 +107,8 @@ namespace PoGoChatbot.Helpers
             }
             else
             {
-                var gymMatches = GymLookupHelper.SearchForGyms(searchTerm);
-
-                if (gymMatches.Count == 0)
-                {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, but I couldn't find a gym called \"{searchTerm}\"."), cancellationToken);
-                }
-                else
+                var gymMatches = GymLookupHelper.SearchForGyms(searchTerm);               
+                if(gymMatches.Any())
                 {
                     if (gymMatches.Count > 1)
                     {
@@ -152,7 +147,10 @@ namespace PoGoChatbot.Helpers
                         await turnContext.SendActivityAsync(MessageFactory.Text($"If I didn't find what you were looking for, feel free to try again with a different search term."), cancellationToken);
                     }
                 }
-
+                else
+                {
+                    await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, but I couldn't find a gym called \"{searchTerm}\"."), cancellationToken);
+                }
             }
         }
 
