@@ -11,33 +11,24 @@ namespace PoGoChatbot.Helpers
     public class PoGoApiHelper
     {
         private static readonly HttpClient poGoApiClient = new HttpClient { BaseAddress = new Uri("https://pogoapi.net/") };
-        private static List<Pokemon> pokemonList;
-        private static Dictionary<string, TypeEffectiveness> typeEffectivenessList;
+        private static List<Pokemon> pokemonList = new List<Pokemon>();
+        private static TypeMatchupList typeMatchupList = new TypeMatchupList();
 
-        private static async Task RefreshPokemonList()
+        private static async Task<T> LoadDataFromApi<T>(string route)
         {
-            var response = await poGoApiClient.GetAsync("/api/v1/pokemon_types.json");
+            var response = await poGoApiClient.GetAsync(route);
             if (response != null && response.IsSuccessStatusCode)
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
-                pokemonList = JsonConvert.DeserializeObject<List<Pokemon>>(jsonString);
+                return JsonConvert.DeserializeObject<T>(jsonString);
             }
-        }
-
-        private static async Task RefreshTypeEffectivenessList()
-        {
-            var response = await poGoApiClient.GetAsync("/api/v1/type_effectiveness.json");
-            if (response != null && response.IsSuccessStatusCode)
-            {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                typeEffectivenessList = JsonConvert.DeserializeObject<Dictionary<string, TypeEffectiveness>>(jsonString);
-            }
+            return default;
         }
 
         public static async Task<Pokemon> GetPokemonType(string searchTerm)
         {
-            if (pokemonList == null || !pokemonList.Any()) await RefreshPokemonList();
-            if (typeEffectivenessList == null || !typeEffectivenessList.Any()) await RefreshTypeEffectivenessList();
+            if (!pokemonList.Any()) pokemonList = await LoadDataFromApi<List<Pokemon>>("/api/v1/pokemon_types.json");
+            if (!typeMatchupList.Any()) typeMatchupList = await LoadDataFromApi<TypeMatchupList>("/api/v1/type_effectiveness.json");
 
             var matchedPokemon = pokemonList
                 .FirstOrDefault(pokemon =>
@@ -47,29 +38,27 @@ namespace PoGoChatbot.Helpers
 
             if (matchedPokemon != null)
             {
-                matchedPokemon.TypeEffectiveness = GetPokemonTypeEffectiveness(matchedPokemon.Type);
+                matchedPokemon.MatchupsForType = GetMatchupsForType(matchedPokemon.Type);
             }
 
             return matchedPokemon;
         }
 
-        public static TypeEffectiveness GetPokemonTypeEffectiveness(string[] types)
+        public static MatchupsForType GetMatchupsForType(string[] pokemonTypes)
         {
-            return types
-                .Select(type =>
+            return pokemonTypes
+                .Select(pokemonType =>
                 {
-                    var properties = typeof(TypeEffectiveness).GetProperties();
-                    var typeEffectiveness = new TypeEffectiveness();
-                    foreach (var typeMatchup in typeEffectivenessList)
-                    {
-                        properties
-                        .First(p => p.Name == typeMatchup.Key)
-                        .SetValue(typeEffectiveness,
-                            properties.First(p => p.Name == type)
-                            .GetValue(typeMatchup.Value)
-                        );
-                    }
-                    return typeEffectiveness;
+                    var properties = typeof(MatchupsForType).GetProperties();
+                    var matchupsForType = new MatchupsForType();
+
+                    typeMatchupList.ToList()
+                        .ForEach(matchup =>
+                        {
+                            matchupsForType[matchup.Key] = matchup.Value.First(row => row.Key == pokemonType).Value;
+                        });
+    
+                    return matchupsForType;
                 }).Aggregate((a, b) => a * b);
         }
     }

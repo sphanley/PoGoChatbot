@@ -75,19 +75,16 @@ namespace PoGoChatbot.Helpers
                 var typeOrTypes = pokemon.Type.Length == 1 ? "type" : "types";
                 var messageText = $"{pokemon.Name} has the {typeOrTypes} {string.Join(" and ", pokemon.Type)}. That means it is:\n\n";
 
-                //TODO: Consider redesigning this to be less complex and not reliant on Reflection
-                // Perhaps use a custom deserializer for the type_effectiveness.json so that it's read into an array of dictionaries or similar rather than objects, to aid in iterating over info?
-                var properties = typeof(TypeEffectiveness).GetProperties();
-                var doubleResistantAgainst = properties.Where(p => Math.Abs((double)p.GetValue(pokemon.TypeEffectiveness) - (0.625 * 0.625)) < 0.00001).Select(p => p.Name);
+                var doubleResistantAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.DOUBLE_RESISTANT).Select(pair => pair.Key);
                 if(doubleResistantAgainst.Any()) messageText += $"• Double resistant against {doubleResistantAgainst.CommaSeparateWithAnd()}.\n\n";
-                
-                var resistantAgainst = properties.Where(p => Math.Abs((double)p.GetValue(pokemon.TypeEffectiveness) - 0.625) < 0.00001).Select(p => p.Name);
+
+                var resistantAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.RESISTANT).Select(pair => pair.Key);
                 if(resistantAgainst.Any()) messageText += $"• Resistant against {resistantAgainst.CommaSeparateWithAnd()}.\n\n";
 
-                var weakAgainst = properties.Where(p => Math.Abs((double)p.GetValue(pokemon.TypeEffectiveness) - 1.6) < 0.00001).Select(p => p.Name);
+                var weakAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.RESISTANT).Select(pair => pair.Key);
                 if(weakAgainst.Any()) messageText += $"• Weak against {weakAgainst.CommaSeparateWithAnd()}.\n\n";
 
-                var doubleWeakAgainst = properties.Where(p => Math.Abs((double)p.GetValue(pokemon.TypeEffectiveness) - (1.6 * 1.6)) < 0.00001).Select(p => p.Name);
+                var doubleWeakAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.DOUBLE_RESISTANT).Select(pair => pair.Key);
                 if(doubleWeakAgainst.Any()) messageText += $"• Double weak against {doubleWeakAgainst.CommaSeparateWithAnd()}.\n\n";
 
                 await turnContext.SendActivityAsync(MessageFactory.Text(messageText));

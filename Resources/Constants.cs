@@ -10,5 +10,13 @@
         public const string MapMessage = "Here's a map of the gyms where we typically raid: https://tinyurl.com/y3rddyjd";
 
         public const string RaidBossesMessage = "Thanks to the hard work of the Silph Research Group, a list of the known current raid bosses can be found at https://thesilphroad.com/raid-bosses";
+
+        public static class Numeric
+        {
+            public const decimal DOUBLE_RESISTANT = 0.390625M;
+            public const decimal RESISTANT = 0.625M;
+            public const decimal WEAK = 1.6M;
+            public const decimal DOUBLE_WEAK = 2.56M;
+        }
     }
 }
