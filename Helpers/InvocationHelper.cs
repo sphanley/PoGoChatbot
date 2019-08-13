@@ -21,6 +21,10 @@ namespace PoGoChatbot.Helpers
         {
             switch (turnContext.Activity.Text.Split(" ")[0])
             {
+                case "!bugreport":
+                case "!featurerequest":
+                    await HandleBugReportInvocation(turnContext, cancellationToken);
+                    break;
                 case "!bosses":
                 case "!raidbosses":
                     await HandleRaidBossesInvocation(turnContext, cancellationToken);
@@ -41,6 +45,13 @@ namespace PoGoChatbot.Helpers
         }
 
         #region Invocation Handler Methods
+        private static async Task HandleBugReportInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        {
+            await turnContext.SendActivityAsync(MessageFactory.Text($"To report a simple issue or feature idea, feel free to ping @Sam (sphanley) Valor 39 in the chat. " +
+                $"If you're reporting something more complex or lengthy, you can send an email to {Environment.GetEnvironmentVariable("AdminEmailAddress")}, " +
+                $"or if you are a power user and are comfortable opening a GitHub issue, you can do so here: https://github.com/sphanley/PoGoChatbot/issues/new"), cancellationToken);
+        }
+
 
         private static async Task HandleHelpInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
@@ -48,7 +59,8 @@ namespace PoGoChatbot.Helpers
                 "• For the map of all gyms within this group's area, say \"!map\".\n\n" +
                 "• For the location of a specific gym, say \"!whereis {Gym Name}\" - for example, \"!whereis Spirit Corner\" or \"!whereis Coventry Arch\".\n\n" +
                 "• For the type(s), strengths and weaknesses of a specific pokemon, say \"!type {Pokemon Name}\" or \"!type {Pokemon number}\"  - for example, \"!type Pikachu\" or \"!type 25\".\n\n" +
-                "• For a link to the list of known current raid bosses , say \"!raidbosses\" or \"!bosses\".\n\n" +
+                "• For a link to the list of known current raid bosses, say \"!raidbosses\" or \"!bosses\".\n\n" +
+                "• For info on how to send a bug report or feature request, say \"!bugreport\" or \"!featurerequest\".\n\n" +
                 "• For this list, say \"!help\"."
             ), cancellationToken);
         }
