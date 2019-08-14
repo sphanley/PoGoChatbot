@@ -22,7 +22,7 @@ namespace PoGoChatbot.Helpers
                 var jsonString = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<T>(jsonString);
             }
-            return default;
+            return default(T);
         }
 
         public static async Task<Pokemon> GetPokemonType(string searchTerm)
