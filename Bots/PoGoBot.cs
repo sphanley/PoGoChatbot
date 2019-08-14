@@ -14,10 +14,13 @@ namespace PoGoChatbot.Bots
         {
             // This first if statement is a temporary hack to work around the fact that GroupMe doesn't correctly route add/join messages through OnMembersAddedAsync.
             // Once https://github.com/microsoft/BotFramework-Services/issues/97 is resolved, welcome messages need only be handled by OnMembersAddedAsync
-            var addedMemberName = turnContext.Activity.getAddedGroupMeMemberName();
-            if (!string.IsNullOrEmpty(addedMemberName))
+            if (turnContext.Activity.TryGetAddedGroupMeMemberName(out string addedMemberName))
             {
                 await WelcomeHelper.SendWelcomeMessage(addedMemberName, turnContext, cancellationToken);
+            }
+            if (turnContext.Activity.TryGetReturningGroupMeMemberName(out string returningMemberName))
+            {
+                await WelcomeHelper.SendWelcomeBackMessage(returningMemberName, turnContext, cancellationToken);
             }
             else if (turnContext.Activity.Text.StartsWith("!", StringComparison.Ordinal))
             {

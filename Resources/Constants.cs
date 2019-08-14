@@ -18,5 +18,17 @@
             public const decimal WEAK = 1.6M;
             public const decimal DOUBLE_WEAK = 2.56M;
         }
+
+        public static class WelcomeMessages
+        {
+            public const string FirstTimeNameFormatMessage = "To start, if you haven't already, you'll want to use the \"Change Nickname\" option from the settings menu to set your name to this format: " +
+                            "\"Name {TrainerName} {Team} {Level}\". For example, I was created by @Sam (sphanley) Valor 39.\n\n" +
+                            "Using this format helps us recognize each other, and estimate how many people are needed for a raid.";
+
+            public const string FirstTimeBotTutorialMessage = "I can also provide lots of helpful info! For example, to see a map of the gyms where we raid, you can say \"!map\"," +
+                        " or you can say things like \"!whereis Spirit Corner\" or \"!type Pikachu\". For a full list of possible commands, say \"!help\". And remember, have fun!";
+
+            public const string WelcomeBackReminderMessage = "As a reminder, please make sure your name is in the format \"Name {TrainerName} {Team} {Level}\". And if you need a refresher on the ways I can provide helpful info, just say \"!help\". And have fun!"; 
+        }
     }
 }
