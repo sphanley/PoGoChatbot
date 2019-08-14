@@ -93,10 +93,10 @@ namespace PoGoChatbot.Helpers
                 var resistantAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.RESISTANT).Select(pair => pair.Key);
                 if(resistantAgainst.Any()) messageText += $"• Resistant against {resistantAgainst.CommaSeparateWithAnd()}.\n\n";
 
-                var weakAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.RESISTANT).Select(pair => pair.Key);
+                var weakAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.WEAK).Select(pair => pair.Key);
                 if(weakAgainst.Any()) messageText += $"• Weak against {weakAgainst.CommaSeparateWithAnd()}.\n\n";
 
-                var doubleWeakAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.DOUBLE_RESISTANT).Select(pair => pair.Key);
+                var doubleWeakAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.DOUBLE_WEAK).Select(pair => pair.Key);
                 if(doubleWeakAgainst.Any()) messageText += $"• Double weak against {doubleWeakAgainst.CommaSeparateWithAnd()}.\n\n";
 
                 await turnContext.SendActivityAsync(MessageFactory.Text(messageText));
