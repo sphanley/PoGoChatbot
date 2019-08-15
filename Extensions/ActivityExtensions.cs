@@ -1,6 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Bot.Schema;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PoGoChatbot.Models;
 
@@ -8,6 +11,8 @@ namespace PoGoChatbot
 {
     public static class ActivityExtensions
     {
+        private static Dictionary<string, string> groupNameMappings;
+
         public static bool TryGetAddedGroupMeMemberName(this IMessageActivity activity, out string addedMemberName)
         {
             if (activity.From.Id != "system" && activity.From.Name != "GroupMe")
@@ -62,6 +67,15 @@ namespace PoGoChatbot
         {
             JArray channelData;
             return (activity.TryGetChannelData(out channelData) && channelData.Any(token => token.ToObject<GroupMeAttachment>().Type == "poll"));
+        }
+
+        public static string GetRaidGroupName(this ConversationAccount conversation)
+        {
+            if (groupNameMappings == null || !groupNameMappings.Any())
+            {
+                groupNameMappings = JsonConvert.DeserializeObject<Dictionary<string, string>>(Environment.GetEnvironmentVariable("GroupNameMappings"));
+            }
+            return groupNameMappings.GetValueOrDefault(conversation.Id, "");
         }
     }
 }

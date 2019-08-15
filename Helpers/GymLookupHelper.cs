@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using DuoVia.FuzzyStrings;
 using Newtonsoft.Json;
 using PoGoChatbot.Models;
@@ -13,7 +12,7 @@ namespace PoGoChatbot.Helpers
     {
         private static List<Gym> gyms;
 
-        public static List<Gym> SearchForGyms(String searchTerm)
+        public static List<Gym> SearchForGyms(string searchTerm)
         {
             if (gyms == null || !gyms.Any())
             {
