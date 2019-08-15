@@ -129,8 +129,12 @@ namespace PoGoChatbot.Helpers
                     foreach (var gym in gymMatches.Take(3))
                     {
                         var messageText = $"Here's the location of {gym.Name}.";
+                        if (gym.Territory.Any())
+                        {
+                            messageText += $" It's in an area where the {gym.Territory.CommaSeparateWithAnd()} {(gym.Territory.Count() == 1 ? "group raids" : "groups may raid")}.";
+                        }
                         if (gym.IsEXEligible) messageText += " It's an EX Raid eligible gym!";
-
+                        
                         #region - This is a temporary hack to send the Location attachment while waiting for a fix for https://github.com/microsoft/BotFramework-Services/issues/101
                         var message = JObject.FromObject(new
                         {

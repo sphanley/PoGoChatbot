@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using DuoVia.FuzzyStrings;
 using Newtonsoft.Json;
 using PoGoChatbot.Models;
@@ -38,11 +39,11 @@ namespace PoGoChatbot.Helpers
             // If none found, search for gyms with names which contain all of the word(s) in the search term, ignoring case or punctuation
             var gymMatches = gyms.Where(gym =>
             {
-                var normalizedSearchTerm = searchTerm.ToLowerInvariant().Replace("\\p{P}+", "");
-                var normalizedGymName = gym.Name.ToLowerInvariant().Replace("\\p{P}+", "");
+                var normalizedSearchTerm = Normalize(searchTerm);
+                var normalizedGymName = Normalize(gym.Name);
 
-                var wordsInSearchTerm = normalizedSearchTerm.Split(" ");
-                var wordsInGymName = normalizedGymName.Split(" ");
+                var wordsInSearchTerm = normalizedSearchTerm.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                var wordsInGymName = normalizedGymName.Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
                 if (!wordsInSearchTerm.Except(wordsInGymName).Any()) return true;
 
@@ -51,6 +52,14 @@ namespace PoGoChatbot.Helpers
 
             return gymMatches.ToList();
 
+        }
+
+        private static string Normalize(string input)
+        {
+            return input
+                .ToLowerInvariant()
+                .Replace("-", " ")
+                .Replace("\\p{P}+", "");
         }
     }
 }
