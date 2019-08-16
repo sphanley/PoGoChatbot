@@ -12,9 +12,6 @@ namespace PoGoChatbot.Bots
     {
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            // To use this mechanism to provide an easy reference to a friendly name for each group, set an Environment variable called "GroupNameMappings"
-            //  containing key/value pairs for each chat where the bot is active, such that the key is the channel's Conversation ID, and the value is the friendly name, like:
-            // "{ '12345678': 'group name', ... }"
             turnContext.Activity.SetGroupNameFromConversationId();
 
             // This first if statement is a temporary hack to work around the fact that GroupMe doesn't correctly route add/join messages through OnMembersAddedAsync.
