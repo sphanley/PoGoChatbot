@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 
@@ -11,7 +12,7 @@ namespace PoGoChatbot.Helpers
             await turnContext.SendActivitiesAsync(new[] {
                         MessageFactory.Text($"Welcome, {addedMemberName}! We're always excited to have a new trainer join our community! Our group guidelines and FAQs can be found here: {VariableResources.GetWelcomePacketUrl(turnContext.Activity)}"),
                         MessageFactory.Text(Constants.WelcomeMessages.FirstTimeNameFormatMessage),
-                        MessageFactory.Text(Constants.WelcomeMessages.FirstTimeBotTutorialMessage)
+                        MessageFactory.Text(string.Format(Constants.WelcomeMessages.ParameterizedFirstTimeBotTutorialMessage, VariableResources.GetExampleGymNamesForGroup(turnContext.Activity).First()))
                     }, cancellationToken);
         }
 
