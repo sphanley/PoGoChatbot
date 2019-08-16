@@ -28,7 +28,7 @@ namespace PoGoChatbot
             }
         }
 
-        public static string getWelcomePacketUrl(IActivity activity)
+        public static string GetWelcomePacketUrl(IActivity activity)
         {
             switch (activity.Conversation.Id)
             {

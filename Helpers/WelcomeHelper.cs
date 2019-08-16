@@ -9,7 +9,7 @@ namespace PoGoChatbot.Helpers
         public static async Task SendWelcomeMessage(string addedMemberName, ITurnContext turnContext, CancellationToken cancellationToken)
         {
             await turnContext.SendActivitiesAsync(new[] {
-                        MessageFactory.Text($"Welcome, {addedMemberName}! We're always excited to have a new trainer join our community! I've got a few helpful tips to help you get started."),
+                        MessageFactory.Text($"Welcome, {addedMemberName}! We're always excited to have a new trainer join our community! Our group guidelines and FAQs can be found here: {VariableResources.GetWelcomePacketUrl(turnContext.Activity)}"),
                         MessageFactory.Text(Constants.WelcomeMessages.FirstTimeNameFormatMessage),
                         MessageFactory.Text(Constants.WelcomeMessages.FirstTimeBotTutorialMessage)
                     }, cancellationToken);
