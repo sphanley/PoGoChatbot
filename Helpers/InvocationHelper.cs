@@ -67,7 +67,7 @@ namespace PoGoChatbot.Helpers
 
         private static async Task HandleMapInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            await turnContext.SendActivityAsync(MessageFactory.Text(Constants.MapMessage), cancellationToken);
+            await turnContext.SendActivityAsync(MessageFactory.Text($"{Constants.MapMessage} {VariableResources.GetMapUrl(turnContext)}"), cancellationToken);
         }
 
         private static async Task HandleRaidBossesInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -129,7 +129,7 @@ namespace PoGoChatbot.Helpers
                     foreach (var gym in gymMatches.Take(3))
                     {
                         var messageText = $"Here's the location of {gym.Name}.";
-                        if (gym.Territory.Any(groupName => !groupName.Equals(turnContext.Activity.Conversation.GetRaidGroupName())))
+                        if (gym.Territory.Any(groupName => !groupName.Equals(turnContext.Activity.Conversation.Name)))
                         {
                             messageText += $" It's in an area where the {gym.Territory.CommaSeparateWithAnd()} {(gym.Territory.Count() == 1 ? "group raids" : "groups may raid")}.";
                         }

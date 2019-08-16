@@ -69,13 +69,13 @@ namespace PoGoChatbot
             return (activity.TryGetChannelData(out channelData) && channelData.Any(token => token.ToObject<GroupMeAttachment>().Type == "poll"));
         }
 
-        public static string GetRaidGroupName(this ConversationAccount conversation)
+        public static void SetGroupNameFromConversationId(this IActivity activity)
         {
             if (groupNameMappings == null || !groupNameMappings.Any())
             {
                 groupNameMappings = JsonConvert.DeserializeObject<Dictionary<string, string>>(Environment.GetEnvironmentVariable("GroupNameMappings"));
             }
-            return groupNameMappings.GetValueOrDefault(conversation.Id, "");
+            activity.Conversation.Name = groupNameMappings.GetValueOrDefault(activity.Conversation.Id, "");
         }
     }
 }
