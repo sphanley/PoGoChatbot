@@ -15,8 +15,8 @@ namespace PoGoChatbot
             switch (activity.Conversation.Id)
             {
                 case "32638346":
-                case "51947472":
                     return "http://bit.ly/nesraidmap";
+                case "51947472": // 51947472 is lab group
                 case "31972760":
                     return "http://bit.ly/ucraidmap";
                 default:
@@ -29,8 +29,8 @@ namespace PoGoChatbot
             switch (activity.Conversation.Id)
             {
                 case "32638346":
-                case "51947472": // 51947472 is lab group
                     return "Near East Side";
+                case "51947472": // 51947472 is lab group
                 case "31972760":
                     return "University Circle";
                 default:
@@ -43,8 +43,8 @@ namespace PoGoChatbot
             switch (activity.Conversation.Id)
             {
                 case "32638346":
-                case "51947472": // 51947472 is lab group
                     return "http://bit.ly/nespogoinfo";
+                case "51947472": // 51947472 is lab group
                 case "31972760":
                     return "http://bit.ly/ucpogoinfo";
                 default:
@@ -57,9 +57,9 @@ namespace PoGoChatbot
             switch (activity.Conversation.Id)
             {
                 case "32638346":
-                case "51947472": // 51947472 is lab group
                     return new[] { "Spirit Corner", "Bird Friendly Habitat" };
                 case "31972760":
+                case "51947472": // 51947472 is lab group
                     return new[] { "MOCA", "Batter Up" };
                 default:
                     return new[] { "PLACEHOLDER_1", "PLACEHOLDER_2" };
