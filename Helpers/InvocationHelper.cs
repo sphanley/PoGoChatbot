@@ -67,7 +67,7 @@ namespace PoGoChatbot.Helpers
 
         private static async Task HandleMapInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            await turnContext.SendActivityAsync(MessageFactory.Text($"{Constants.MapMessage} {VariableResources.GetMapUrl(turnContext)}"), cancellationToken);
+            await turnContext.SendActivityAsync(MessageFactory.Text($"{Constants.MapMessage} {VariableResources.GetMapUrl(turnContext.Activity)}"), cancellationToken);
         }
 
         private static async Task HandleRaidBossesInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)

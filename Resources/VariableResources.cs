@@ -1,22 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Bot.Builder;
-using Newtonsoft.Json;
+﻿using Microsoft.Bot.Schema;
 
 namespace PoGoChatbot
 {
     public static class VariableResources
     {
-        private static Dictionary<string, string> gymMapUrlMappings;
-
-        public static string GetMapUrl(ITurnContext turnContext)
+        public static string GetMapUrl(IActivity activity)
         {
-            if (gymMapUrlMappings == null || !gymMapUrlMappings.Any())
+            switch (activity.Conversation.Id)
             {
-                gymMapUrlMappings = JsonConvert.DeserializeObject<Dictionary<string, string>>(Environment.GetEnvironmentVariable("MapUrlMappings"));
+                case "32638346":
+                case "51947472":
+                    return "http://bit.ly/neareastsidemap";
+                default:
+                    return "";
             }
-            return gymMapUrlMappings.GetValueOrDefault(turnContext.Activity.Conversation.Id, "");
+        }
+
+        public static string GetGroupName(IActivity activity)
+        {
+            switch (activity.Conversation.Id)
+            {
+                case "32638346":
+                case "51947472": // 51947472 is lab group
+                    return "Near East Side";
+                default:
+                    return "";
+            }
+        }
+
+        public static string getWelcomePacketUrl(IActivity activity)
+        {
+            switch (activity.Conversation.Id)
+            {
+                case "32638346":
+                case "51947472": // 51947472 is lab group
+                    return "http://bit.ly/neareastsidefaq";
+                default:
+                    return "";
+            }
         }
     }
 }

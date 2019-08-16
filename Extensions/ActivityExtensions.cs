@@ -11,8 +11,6 @@ namespace PoGoChatbot
 {
     public static class ActivityExtensions
     {
-        private static Dictionary<string, string> groupNameMappings;
-
         public static bool TryGetAddedGroupMeMemberName(this IMessageActivity activity, out string addedMemberName)
         {
             if (activity.From.Id != "system" && activity.From.Name != "GroupMe")
@@ -71,11 +69,7 @@ namespace PoGoChatbot
 
         public static void SetGroupNameFromConversationId(this IActivity activity)
         {
-            if (groupNameMappings == null || !groupNameMappings.Any())
-            {
-                groupNameMappings = JsonConvert.DeserializeObject<Dictionary<string, string>>(Environment.GetEnvironmentVariable("GroupNameMappings"));
-            }
-            activity.Conversation.Name = groupNameMappings.GetValueOrDefault(activity.Conversation.Id, "");
+            activity.Conversation.Name = VariableResources.GetGroupName(activity);
         }
     }
 }
