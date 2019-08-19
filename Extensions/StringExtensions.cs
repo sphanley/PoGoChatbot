@@ -6,18 +6,20 @@ namespace PoGoChatbot.Extensions
 {
     public static class StringExtensions
     {
-        public static string CommaSeparateWithAnd(this IEnumerable<string> array)
+        public static string CommaSeparateWithAnd(this IEnumerable<string> array, bool quoted = false)
         {
+            var strings = quoted ? array.Select(str => $"\"{str}\"") : array;
+
             var sb = new StringBuilder("");
-            if (array == null) return null;
+            if (strings == null) return null;
 
-            if (!array.Any()) return sb.ToString();
-            if (array.Count() == 1) return array.First();
+            if (!strings.Any()) return sb.ToString();
+            if (strings.Count() == 1) return strings.First();
 
-            sb.Append(string.Join(", ", array.Take(array.Count() - 1)));
+            sb.Append(string.Join(", ", strings.Take(array.Count() - 1)));
 
             sb.Append(" and ");
-            sb.Append(array.LastOrDefault());
+            sb.Append(strings.LastOrDefault());
 
             return sb.ToString();
         }
