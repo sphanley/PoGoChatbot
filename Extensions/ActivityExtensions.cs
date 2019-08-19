@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Bot.Schema;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PoGoChatbot.Models;
 
@@ -19,8 +16,8 @@ namespace PoGoChatbot
                 return false;
             }
 
-            Regex joinedRegex = new Regex($"^(.+) has joined the group.$");
-            Regex addedRegex = new Regex($"^.+ added (.+) to the group.");
+            Regex joinedRegex = new Regex($"^(.+) has joined the group$");
+            Regex addedRegex = new Regex($"^.+ added (.+) to the group.$");
 
             Match joinedMatch = joinedRegex.Match(activity.Text);
             if (joinedMatch.Success && joinedMatch.Groups.Count >= 2)
