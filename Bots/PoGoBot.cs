@@ -24,11 +24,11 @@ namespace PoGoChatbot.Bots
             {
                 await WelcomeHelper.SendWelcomeBackMessage(returningMemberName, turnContext, cancellationToken);
             }
-            else if (turnContext.Activity.Text.StartsWith("!", StringComparison.Ordinal))
+            if (turnContext.Activity.Text.StartsWith("!", StringComparison.Ordinal))
             {
                 await InvocationHelper.HandleInvocationActivity(turnContext, cancellationToken);
             }
-            else if (turnContext.Activity.IsCreatedPoll())
+            if (turnContext.Activity.IsCreatedPoll())
             {
                 await turnContext.SendActivityAsync(MessageFactory.Text(Constants.VoteAndLikeReminder), cancellationToken);
             }
