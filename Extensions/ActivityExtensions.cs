@@ -13,7 +13,7 @@ namespace PoGoChatbot
     {
         public static bool TryGetAddedGroupMeMemberName(this IMessageActivity activity, out string addedMemberName)
         {
-            if (activity.From.Id != "system" && activity.From.Name != "GroupMe")
+            if (activity.From.Id != "system" || activity.From.Name != "GroupMe")
             {
                 addedMemberName = null;
                 return false;
@@ -42,7 +42,7 @@ namespace PoGoChatbot
 
         public static bool TryGetReturningGroupMeMemberName(this IMessageActivity activity, out string returningMemberName)
         {
-            if (activity.From.Id != "system" && activity.From.Name != "GroupMe")
+            if (activity.From.Id != "system" || activity.From.Name != "GroupMe")
             {
                 returningMemberName = null;
                 return false;
