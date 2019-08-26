@@ -68,6 +68,7 @@ namespace PoGoChatbot
 
         internal static string GetGroupMeBotId(IMessageActivity activity)
         {
+            if (activity.ChannelId == "emulator") return null;
             if (!_botIds.Any()) {
                 var botIdMappings = Environment.GetEnvironmentVariable("GroupMeBotId");
                 _botIds = JsonConvert.DeserializeObject<Dictionary<string, string>>(botIdMappings);
