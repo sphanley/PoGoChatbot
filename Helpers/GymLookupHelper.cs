@@ -12,7 +12,7 @@ namespace PoGoChatbot.Helpers
     {
         private static List<Gym> gyms;
 
-        public static List<Gym> SearchForGyms(string searchTerm)
+        public static List<Gym> SearchForGyms(string searchTerm, string groupName)
         {
             if (gyms == null || !gyms.Any())
             {
@@ -23,23 +23,48 @@ namespace PoGoChatbot.Helpers
                 }
             }
 
-            // Search for gyms with names which match exactly
-            var exactMatch = gyms.Where(gym => gym.Name.ToLowerInvariant().Equals(searchTerm.ToLowerInvariant()));
-            if (exactMatch.Any()) return exactMatch.ToList();
+            // Search for gyms with names which match exactly 
+            IEnumerable<Gym> matches = FindNameOrAliasMatch(searchTerm, groupName);
+            if (matches.Any()) return matches.ToList();
 
-            // Search for gyms with an alias which matches exactly
-            var aliasMatch = gyms.Where(gym => gym.Aliases.Any(a => a.ToLowerInvariant().Equals(searchTerm.ToLowerInvariant())));
-            if (aliasMatch.Any()) return aliasMatch.ToList();
-
-            // If none found, search for gyms with names which match approximately
-            var fuzzyMatches = gyms.Where(gym => gym.Name.FuzzyEquals(searchTerm));
-            if (fuzzyMatches.Any()) return fuzzyMatches.ToList();
+            // If none found, search for gyms with names which match approximately and territory matches group name
+            matches = FindNameOrAliasMatch(searchTerm, groupName, 0.7);
+            if (matches.Any()) return matches.ToList();
 
             // If none found, search for gyms with names which contain all of the word(s) in the search term, ignoring case or punctuation
-            var gymMatches = gyms.Where(gym =>
+            matches = FindNameOrAliasApproximation(searchTerm, groupName);
+            if (matches.Any()) return matches.ToList();
+
+            // If none found, search for gyms where the name/alias matches approximately, regardless of group territory
+            matches = FindNameOrAliasMatch(searchTerm, matchThreshold: 0.7);
+            if (matches.Any()) return matches.ToList();
+
+            // If all else has failed, return any approximate matches, regardless of group territory
+            matches = FindNameOrAliasApproximation(searchTerm);
+            return matches.ToList();
+        }
+
+        private static IEnumerable<Gym> FindNameOrAliasMatch(string searchTerm, string groupName = null, double matchThreshold = 1.0)
+        {
+            var matches = gyms.Where(gym =>
+                gym.Name.ToLowerInvariant().FuzzyEquals(searchTerm.ToLowerInvariant(), matchThreshold) ||
+                gym.Aliases.Any(a => a.ToLowerInvariant().FuzzyEquals(searchTerm.ToLowerInvariant(), matchThreshold))
+            );
+
+            if (!string.IsNullOrEmpty(groupName))
             {
-                var normalizedSearchTerm = Normalize(searchTerm);
-                var normalizedGymName = Normalize(gym.Name);
+                matches = matches.Where(gym => gym.Territory.Contains(groupName));
+            }
+
+            return matches;
+        }
+
+        private static IEnumerable<Gym> FindNameOrAliasApproximation(string searchTerm, string groupName = null)
+        {
+            var candidates = gyms.Where(gym =>
+            {
+                var normalizedSearchTerm = NormalizeStringForGymSearch(searchTerm);
+                var normalizedGymName = NormalizeStringForGymSearch(gym.Name);
 
                 var wordsInSearchTerm = normalizedSearchTerm.Split(" ", StringSplitOptions.RemoveEmptyEntries);
                 var wordsInGymName = normalizedGymName.Split(" ", StringSplitOptions.RemoveEmptyEntries);
@@ -49,16 +74,21 @@ namespace PoGoChatbot.Helpers
                 return false;
             });
 
-            return gymMatches.ToList();
+            if (!string.IsNullOrEmpty(groupName))
+            {
+                candidates = candidates.Where(c => c.Territory.Contains(groupName));
+            }
 
+            return candidates;
         }
 
-        private static string Normalize(string input)
+        private static string NormalizeStringForGymSearch(string input)
         {
             return input
                 .ToLowerInvariant()
                 .Replace("-", " ")
                 .Replace("\\p{P}+", "");
         }
+
     }
 }

@@ -89,16 +89,16 @@ namespace PoGoChatbot.Helpers
                 var messageText = $"{pokemon.Name} has the {typeOrTypes} {string.Join(" and ", pokemon.Type)}. That means it is:\n\n";
 
                 var doubleResistantAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.DOUBLE_RESISTANT).Select(pair => pair.Key);
-                if(doubleResistantAgainst.Any()) messageText += $"• Double resistant against {doubleResistantAgainst.CommaSeparateWithAnd()}.\n\n";
+                if (doubleResistantAgainst.Any()) messageText += $"• Double resistant against {doubleResistantAgainst.CommaSeparateWithAnd()}.\n\n";
 
                 var resistantAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.RESISTANT).Select(pair => pair.Key);
-                if(resistantAgainst.Any()) messageText += $"• Resistant against {resistantAgainst.CommaSeparateWithAnd()}.\n\n";
+                if (resistantAgainst.Any()) messageText += $"• Resistant against {resistantAgainst.CommaSeparateWithAnd()}.\n\n";
 
                 var weakAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.WEAK).Select(pair => pair.Key);
-                if(weakAgainst.Any()) messageText += $"• Weak against {weakAgainst.CommaSeparateWithAnd()}.\n\n";
+                if (weakAgainst.Any()) messageText += $"• Weak against {weakAgainst.CommaSeparateWithAnd()}.\n\n";
 
                 var doubleWeakAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.DOUBLE_WEAK).Select(pair => pair.Key);
-                if(doubleWeakAgainst.Any()) messageText += $"• Double weak against {doubleWeakAgainst.CommaSeparateWithAnd()}.\n\n";
+                if (doubleWeakAgainst.Any()) messageText += $"• Double weak against {doubleWeakAgainst.CommaSeparateWithAnd()}.\n\n";
 
                 await turnContext.SendActivityAsync(MessageFactory.Text(messageText));
             }
@@ -120,8 +120,8 @@ namespace PoGoChatbot.Helpers
             }
             else
             {
-                var gymMatches = GymLookupHelper.SearchForGyms(searchTerm);               
-                if(gymMatches.Any())
+                var gymMatches = GymLookupHelper.SearchForGyms(searchTerm, turnContext.Activity.Conversation.Name);
+                if (gymMatches.Any())
                 {
                     if (gymMatches.Count > 1)
                     {
@@ -132,29 +132,36 @@ namespace PoGoChatbot.Helpers
                         var messageText = $"Here's the location of {gym.Name}.";
                         if (gym.Territory.Any(groupName => !groupName.Equals(turnContext.Activity.Conversation.Name)))
                         {
-                            messageText += $" It's in an area where the {gym.Territory.CommaSeparateWithAnd()} {(gym.Territory.Count() == 1 ? "group raids" : "groups may raid")}.";
+                            messageText += $" It's outside this group's territory, in an area where the {gym.Territory.CommaSeparateWithAnd()} {(gym.Territory.Count() == 1 ? "group raids" : "groups may raid")}.";
                         }
                         if (gym.IsEXEligible) messageText += " It's an EX Raid eligible gym!";
 
                         #region - This is a temporary hack to send the Location attachment while waiting for a fix for https://github.com/microsoft/BotFramework-Services/issues/101
                         var botId = VariableResources.GetGroupMeBotId(turnContext.Activity);
-                        if (!string.IsNullOrEmpty(botId)) { 
-                            var message = JObject.FromObject(new
-                            {
-                                text = messageText,
-                                bot_id = botId,
-                                attachments = new[] {
-                                    new GroupMeLocationAttachment
-                                    {
-                                        Latitude = gym.Location.Latitude,
-                                        Longitude = gym.Location.Longitude,
-                                        Name = gym.Name
-                                    }
+                        var message = JObject.FromObject(new
+                        {
+                            text = messageText,
+                            bot_id = botId,
+                            attachments = new[] {
+                                new GroupMeLocationAttachment
+                                {
+                                    Latitude = gym.Location.Latitude,
+                                    Longitude = gym.Location.Longitude,
+                                    Name = gym.Name
                                 }
-                            });
+                            }
+                        });
 
+                        if (!string.IsNullOrEmpty(botId))
+                        {
                             var messageJson = new StringContent(message.ToString(), Encoding.UTF8, "application/json");
                             _ = httpClient.PostAsync("v3/bots/post", messageJson);
+                        }
+                        else if (turnContext.Activity.ChannelId == "emulator")
+                        {
+
+                            await turnContext.SendActivityAsync(MessageFactory.Text("Unable to send attachment via emulator. Message content below:"));
+                            await turnContext.SendActivityAsync(MessageFactory.Text(message.ToString()));
                         }
                         #endregion
                         if (!string.IsNullOrEmpty(gym.Description))
