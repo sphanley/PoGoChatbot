@@ -13,10 +13,10 @@
 
         public static class Numeric
         {
-            public const decimal DOUBLE_RESISTANT = 0.390625M;
-            public const decimal RESISTANT = 0.625M;
-            public const decimal WEAK = 1.6M;
-            public const decimal DOUBLE_WEAK = 2.56M;
+            public const decimal DOUBLE_RESISTANT = 0.390625m;
+            public const decimal RESISTANT = 0.625m;
+            public const decimal WEAK = 1.6m;
+            public const decimal DOUBLE_WEAK = 2.56m;
         }
 
         public static class WelcomeMessages
