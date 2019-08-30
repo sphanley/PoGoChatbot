@@ -11,6 +11,7 @@ namespace PoGoChatbot.Helpers
     public static class GymLookupHelper
     {
         private static List<Gym> gyms;
+        private const double MAX_MATCH_CONFIDENCE = 0.999998;
 
         public static List<Gym> SearchForGyms(string searchTerm, string groupName)
         {
@@ -44,11 +45,11 @@ namespace PoGoChatbot.Helpers
             return matches.ToList();
         }
 
-        private static IEnumerable<Gym> FindNameOrAliasMatch(string searchTerm, string groupName = null, double matchThreshold = 1.0)
+        private static IEnumerable<Gym> FindNameOrAliasMatch(string searchTerm, string groupName = null, double matchThreshold = MAX_MATCH_CONFIDENCE)
         {
             var matches = gyms.Where(gym =>
-                gym.Name.ToLowerInvariant().FuzzyEquals(searchTerm.ToLowerInvariant(), matchThreshold) ||
-                gym.Aliases.Any(a => a.ToLowerInvariant().FuzzyEquals(searchTerm.ToLowerInvariant(), matchThreshold))
+                gym.Name.FuzzyEquals(searchTerm, matchThreshold) ||
+                gym.Aliases.Any(alias => alias.FuzzyEquals(searchTerm, matchThreshold))
             );
 
             if (!string.IsNullOrEmpty(groupName))
