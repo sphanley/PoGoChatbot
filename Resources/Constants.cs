@@ -22,7 +22,7 @@
         public static class WelcomeMessages
         {
             public const string FirstTimeNameFormatMessage = "I've got a few important tips to help you get started. First, if you haven't already, you'll want to use the \"Change Nickname\" option from the settings menu to set your name to this format: " +
-                            "\"Name {TrainerName} {Team} {Level}\". For example, I was created by @Sam (sphanley) Valor 39.\n\n" +
+                            "\"Name {TrainerName} {Team} {Level}\". For example, I was created by Sam (sphanley) Valor 39.\n\n" +
                             "Using this format helps us recognize each other, and estimate how many people are needed for a raid.";
 
             public const string ParameterizedFirstTimeBotTutorialMessage = "I can also provide lots of helpful info! For example, to see a map of the gyms where we raid, you can say \"!map\"," +
