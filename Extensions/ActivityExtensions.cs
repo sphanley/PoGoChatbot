@@ -45,7 +45,7 @@ namespace PoGoChatbot
                 return false;
             }
 
-            Regex rejoinedRegex = new Regex($"^(.+) has rejoined the group.$");
+            Regex rejoinedRegex = new Regex($"^(.+) has rejoined the group$");
 
             Match rejoinedMatch = rejoinedRegex.Match(activity.Text);
             if (rejoinedMatch.Success && rejoinedMatch.Groups.Count >= 2)
