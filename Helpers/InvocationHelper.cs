@@ -19,7 +19,7 @@ namespace PoGoChatbot.Helpers
 
         public static async Task HandleInvocationActivity(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            switch (turnContext.Activity.Text.Split(" ")[0])
+            switch (turnContext.Activity.Text.Split(" ")[0].ToLowerInvariant())
             {
                 case "!bugreport":
                 case "!featurerequest":
@@ -78,7 +78,7 @@ namespace PoGoChatbot.Helpers
 
         private static async Task HandleTypeLookupInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            Regex typeLookupRegex = new Regex($"^!type \"?([^\"]+)\"?$");
+            Regex typeLookupRegex = new Regex($"^!type \"?([^\"]+)\"?$", RegexOptions.IgnoreCase);
             Match typeLookupMatch = typeLookupRegex.Match(turnContext.Activity.Text);
             var searchTerm = (typeLookupMatch.Success && typeLookupMatch.Groups.Count >= 2) ? typeLookupMatch.Groups[1].Value : "";
 
@@ -110,7 +110,7 @@ namespace PoGoChatbot.Helpers
 
         private static async Task HandleWhereIsInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            Regex whereIsRegex = new Regex($"^!whereis \"?([^\"]+)\"?$");
+            Regex whereIsRegex = new Regex($"^!whereis \"?([^\"]+)\"?$", RegexOptions.IgnoreCase);
             Match gymNameMatch = whereIsRegex.Match(turnContext.Activity.Text);
             var searchTerm = (gymNameMatch.Success && gymNameMatch.Groups.Count >= 2) ? gymNameMatch.Groups[1].Value : "";
 
