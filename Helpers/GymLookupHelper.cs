@@ -11,7 +11,6 @@ namespace PoGoChatbot.Helpers
     public static class GymLookupHelper
     {
         private static List<Gym> gyms;
-        private const double MAX_MATCH_CONFIDENCE = 0.999998;
 
         public static List<Gym> SearchForGyms(string searchTerm, string groupName)
         {
@@ -28,16 +27,16 @@ namespace PoGoChatbot.Helpers
             IEnumerable<Gym> matches = FindNameOrAliasMatch(searchTerm, groupName);
             if (matches.Any()) return matches.ToList();
 
-            // If none found, search for gyms with names which match approximately and territory matches group name
-            matches = FindNameOrAliasMatch(searchTerm, groupName, 0.7);
+            // If none found, search for gyms with names which match with Levenshtein distance of <= 2, and territory matches group name
+            matches = FindNameOrAliasMatch(searchTerm, groupName, 2);
             if (matches.Any()) return matches.ToList();
 
             // If none found, search for gyms with names which contain all of the word(s) in the search term, ignoring case or punctuation
             matches = FindNameOrAliasApproximation(searchTerm, groupName);
             if (matches.Any()) return matches.ToList();
 
-            // If none found, search for gyms where the name/alias matches approximately, regardless of group territory
-            matches = FindNameOrAliasMatch(searchTerm, matchThreshold: 0.7);
+            // If none found, search for gyms where the name/alias matches with Levenshtein distance of <= 2, regardless of group territory
+            matches = FindNameOrAliasMatch(searchTerm, levenshteinDistance: 2);
             if (matches.Any()) return matches.ToList();
 
             // If all else has failed, return any approximate matches, regardless of group territory
@@ -45,11 +44,11 @@ namespace PoGoChatbot.Helpers
             return matches.ToList();
         }
 
-        private static IEnumerable<Gym> FindNameOrAliasMatch(string searchTerm, string groupName = null, double matchThreshold = MAX_MATCH_CONFIDENCE)
+        private static IEnumerable<Gym> FindNameOrAliasMatch(string searchTerm, string groupName = null, int levenshteinDistance = 0)
         {
             var matches = gyms.Where(gym =>
-                gym.Name.FuzzyEquals(searchTerm, matchThreshold) ||
-                gym.Aliases.Any(alias => alias.FuzzyEquals(searchTerm, matchThreshold))
+                gym.Name.LevenshteinDistance(searchTerm) <= levenshteinDistance ||
+                gym.Aliases.Any(alias => alias.LevenshteinDistance(searchTerm) <= levenshteinDistance)
             );
 
             if (!string.IsNullOrEmpty(groupName))
