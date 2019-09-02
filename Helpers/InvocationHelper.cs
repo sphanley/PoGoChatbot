@@ -132,7 +132,10 @@ namespace PoGoChatbot.Helpers
                         var messageText = $"Here's the location of {gym.Name}.";
                         if (gym.Territory.Any(groupName => !groupName.Equals(turnContext.Activity.Conversation.Name)))
                         {
-                            messageText += $" It's outside this group's territory, in an area where the {gym.Territory.CommaSeparateWithAnd()} {(gym.Territory.Count() == 1 ? "group raids" : "groups may raid")}.";
+                            messageText += gym.Territory.Any(name => name.Equals(turnContext.Activity.Conversation.Name)) ?
+                                " It's " :
+                                " It's outside this group's territory, ";
+                            messageText += $"in an area where the {gym.Territory.CommaSeparateWithAnd()} {(gym.Territory.Count() == 1 ? "group raids" : "groups may raid")}.";
                         }
                         if (gym.IsEXEligible) messageText += " It's an EX Raid eligible gym!";
 
