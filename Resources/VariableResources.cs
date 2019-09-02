@@ -1,80 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Bot.Schema;
-using Newtonsoft.Json;
 
 namespace PoGoChatbot
 {
     public static class VariableResources
     {
-        private static Dictionary<string, string> _botIds = new Dictionary<string, string>();
+        // These const variables can be used to easily set default values for local debugging without modifying environment variables
+        private const string DefaultBotId = "";
+        private const string DefaultGroupName = "Near East Side";
+        private const string DefaultGymNameExamples = "PLACEHOLDER_1,PLACEHOLDER_2";
+        private const string DefaultMapUrl = "http://bit.ly/nesraidmap";
+        private const string DefaultWelcomePacketUrl = "http://bit.ly/nespogoinfo";
 
-        public static string GetMapUrl(IActivity activity)
-        {
-            switch (activity.Conversation.Id)
-            {
-                case "32638346":
-                    return "http://bit.ly/nesraidmap";
-                case "51947472": // 51947472 is lab group
-                case "31972760":
-                    return "http://bit.ly/ucraidmap";
-                default:
-                    return "";
-            }
-        }
-
-        public static string GetGroupName(IActivity activity)
-        {
-            switch (activity.Conversation.Id)
-            {
-                case "32638346":
-                    return "Near East Side";
-                case "51947472": // 51947472 is lab group
-                case "31972760":
-                    return "University Circle";
-                default:
-                    return "";
-            }
-        }
-
-        public static string GetWelcomePacketUrl(IActivity activity)
-        {
-            switch (activity.Conversation.Id)
-            {
-                case "32638346":
-                    return "http://bit.ly/nespogoinfo";
-                case "51947472": // 51947472 is lab group
-                case "31972760":
-                    return "http://bit.ly/ucpogoinfo";
-                default:
-                    return "";
-            }
-        }
-
-        public static string[] GetExampleGymNamesForGroup(IActivity activity)
-        {
-            switch (activity.Conversation.Id)
-            {
-                case "32638346":
-                    return new[] { "Spirit Corner", "Bird Friendly Habitat" };
-                case "31972760":
-                case "51947472": // 51947472 is lab group
-                    return new[] { "MOCA", "Batter Up" };
-                default:
-                    return new[] { "PLACEHOLDER_1", "PLACEHOLDER_2" };
-            }
-        }
-
-        internal static string GetGroupMeBotId(IMessageActivity activity)
-        {
-            if (activity.ChannelId == "emulator") return null;
-            if (!_botIds.Any()) {
-                var botIdMappings = Environment.GetEnvironmentVariable("GroupMeBotId");
-                _botIds = JsonConvert.DeserializeObject<Dictionary<string, string>>(botIdMappings);
-            }
-
-            return _botIds.GetValueOrDefault(activity.Conversation.Id, "");
-        }
+        // These public variables should have their associated environment variables set on any deployment environment
+        public static readonly string GroupMeBotId = Environment.GetEnvironmentVariable("GroupMeBotId") ?? DefaultBotId;
+        public static readonly string GroupName = Environment.GetEnvironmentVariable("GroupMeGroupName") ?? DefaultGroupName;
+        public static readonly string[] GymNameExamples = (Environment.GetEnvironmentVariable("GymNameExamples") ?? DefaultGymNameExamples).Split(',');
+        public static readonly string MapUrl = Environment.GetEnvironmentVariable("MapUrl") ?? DefaultMapUrl;
+        public static readonly string WelcomePacketUrl = Environment.GetEnvironmentVariable("WelcomePacketUrl") ?? DefaultWelcomePacketUrl;
     }
 }

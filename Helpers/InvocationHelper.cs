@@ -55,7 +55,7 @@ namespace PoGoChatbot.Helpers
 
         private static async Task HandleHelpInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            var exampleGymNames = VariableResources.GetExampleGymNamesForGroup(turnContext.Activity);
+            var exampleGymNames = VariableResources.GymNameExamples;
             await turnContext.SendActivityAsync(MessageFactory.Text(
                 "• For the map of all gyms within this group's area, say \"!map\".\n\n" +
                 $"• For the location of a specific gym, say \"!whereis {{Gym Name}}\" - for example, \"!whereis {exampleGymNames[0]}\" or \"!whereis {exampleGymNames[1]}\".\n\n" +
@@ -68,7 +68,7 @@ namespace PoGoChatbot.Helpers
 
         private static async Task HandleMapInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            await turnContext.SendActivityAsync(MessageFactory.Text($"{Constants.MapMessage} {VariableResources.GetMapUrl(turnContext.Activity)}"), cancellationToken);
+            await turnContext.SendActivityAsync(MessageFactory.Text($"{Constants.MapMessage} {VariableResources.MapUrl}"), cancellationToken);
         }
 
         private static async Task HandleRaidBossesInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -140,7 +140,7 @@ namespace PoGoChatbot.Helpers
                         if (gym.IsEXEligible) messageText += " It's an EX Raid eligible gym!";
 
                         #region - This is a temporary hack to send the Location attachment while waiting for a fix for https://github.com/microsoft/BotFramework-Services/issues/101
-                        var botId = VariableResources.GetGroupMeBotId(turnContext.Activity);
+                        var botId = VariableResources.GroupMeBotId;
                         var message = JObject.FromObject(new
                         {
                             text = messageText,

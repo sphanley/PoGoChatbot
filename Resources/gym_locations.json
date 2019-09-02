@@ -1,1150 +1,1253 @@
 [
-  {
-    "name": "100K Veale's Turbine",
-    "aliases": [
-      "100K Veale",
-      "Turbine"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.502484",
-      "longitude": "-81.605398"
-    }
-  },
-  {
-    "name": "1933 CHURCH",
-    "territory": [
-      "Near East Side",
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.5034997",
-      "longitude": "-81.5939203"
-    }
-  },
-  {
-    "name": "3D Plus",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.506977",
-      "longitude": "-81.606475"
-    }
-  },
-  {
-    "name": "A.D. 1950 Heights Branch YMCA",
-    "aliases": [
-      "Dobama"
-    ],
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4954932",
-      "longitude": "-81.5654341"
-    }
-  },
-  {
-    "name": "Alta House",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.50855",
-      "longitude": "-81.59598"
-    }
-  },
-  {
-    "name": "Art Studio Mural",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.5018",
-      "longitude": "-81.60319"
-    }
-  },
-  {
-    "name": "Batter Up",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.511979",
-      "longitude": "-81.601693"
-    }
-  },
-  {
-    "name": "Bertram Woods Branch Library",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4764016",
-      "longitude": "-81.5351963"
-    }
-  },
-  {
-    "name": "Bird Friendly Habitat",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4949954",
-      "longitude": "-81.5806165"
-    }
-  },
-  {
-    "name": "Black Angular Statue",
-    "aliases": [
-      "KSL"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.506982",
-      "longitude": "-81.609463"
-    }
-  },
-  {
-    "name": "Bumblebee",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5008749",
-      "longitude": "-81.5651858"
-    }
-  },
-  {
-    "name": "Cain Park",
-    "territory": [
-      "Near East Side"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.5064714",
-      "longitude": "-81.5604621"
-    }
-  },
-  {
-    "name": "Cast Iron Waves",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4637642",
-      "longitude": "-81.5590912"
-    }
-  },
-  {
-    "name": "Cedar Avenue Mural",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5012536",
-      "longitude": "-81.5931137"
-    }
-  },
-  {
-    "name": "Cedar Fairmount Business District",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5012106",
-      "longitude": "-81.5897705"
-    }
-  },
-  {
-    "name": "Cedar Lee Theater",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5010055",
-      "longitude": "-81.5652931"
-    }
-  },
-  {
-    "name": "Christ Episcopal Church",
-    "aliases": [
-      "CEC"
-    ],
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4661785",
-      "longitude": "-81.5357472"
-    }
-  },
-  {
-    "name": "Christ Our Redeemer Church",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5125382",
-      "longitude": "-81.5725181"
-    }
-  },
-  {
-    "name": "Church of Christ",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5206008",
-      "longitude": "-81.5563266"
-    }
-  },
-  {
-    "name": "Cleveland Heights-University Heights Public Library",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4957825",
-      "longitude": "-81.5649459"
-    }
-  },
-  {
-    "name": "Cleveland Institute of Music",
-    "aliases": [
-      "CIM"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.5121954",
-      "longitude": "-81.6090934"
-    }
-  },
-  {
-    "name": "Clock Tower at Wendy's",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4641079",
-      "longitude": "-81.5365952"
-    }
-  },
-  {
-    "name": "Coventry Arch",
-    "territory": [
-      "Near East Side"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.5078565",
-      "longitude": "-81.5795351"
-    }
-  },
-  {
-    "name": "Cumberland Pool",
-    "territory": [
-      "Near East Side"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.5118735",
-      "longitude": "-81.5687978"
-    }
-  },
-  {
-    "name": "Disciples Christian Church",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.520774",
-      "longitude": "-81.5488082"
-    }
-  },
-  {
-    "name": "Dittrick Museum of Medical History",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.506036",
-      "longitude": "-81.608576"
-    }
-  },
-  {
-    "name": "Eagle Statue",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5048593",
-      "longitude": "-81.5801724"
-    }
-  },
-  {
-    "name": "East Cleveland Township Cemetery",
-    "aliases": [
-      "ECTC"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.514047",
-      "longitude": "-81.602314"
-    }
-  },
-  {
-    "name": "Eastview United Church of Christ",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.464583",
-      "longitude": "-81.5716359"
-    }
-  },
-  {
-    "name": "Euclid Golf Historic District",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4984775",
-      "longitude": "-81.5801569"
-    }
-  },
-  {
-    "name": "Flukes",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.502868",
-      "longitude": "-81.617233"
-    }
-  },
-  {
-    "name": "Forest Hill Church",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5190748",
-      "longitude": "-81.5699495"
-    }
-  },
-  {
-    "name": "Forest Hill Park",
-    "territory": [
-      "Near East Side"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.5230243",
-      "longitude": "-81.5733638"
-    }
-  },
-  {
-    "name": "Free Little Library",
-    "territory": [
-      "Near East Side"
-    ],
-    "aliases": [
-      "FLL"
-    ],
-    "location": {
-      "latitude": "41.495958",
-      "longitude": "-81.5820074"
-    }
-  },
-  {
-    "name": "Getting Gas in The 20’s",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.510414",
-      "longitude": "-81.603762"
-    }
-  },
-  {
-    "name": "Gimme Java",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.466308",
-      "longitude": "-81.5648362"
-    }
-  },
-  {
-    "name": "Gridley Triangle Park",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.461266",
-      "longitude": "-81.5501042"
-    }
-  },
-  {
-    "name": "Grinning Lady",
-    "territory": [
-      "University Circle"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.512746",
-      "longitude": "-81.611585"
-    }
-  },
-  {
-    "name": "Harrison Dillard Sculpture",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.50173",
-      "longitude": "-81.6084"
-    }
-  },
-  {
-    "name": "Healix II",
-    "aliases": [
-      "Healix 2"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.513885",
-      "longitude": "-81.599643"
-    }
-  },
-  {
-    "name": "Heights Christian Church",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.465762",
-      "longitude": "-81.558595"
-    }
-  },
-  {
-    "name": "Highland Cemetery Lord Monument",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.463075",
-      "longitude": "-81.5284349"
-    }
-  },
-  {
-    "name": "Highland Park Cemetery",
-    "aliases": [
-      "HPC"
-    ],
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4601291",
-      "longitude": "-81.532816"
-    }
-  },
-  {
-    "name": "Iris S and Bert Wolstein Research Building",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.506389",
-      "longitude": "-81.603372"
-    }
-  },
-  {
-    "name": "Jacob Russell",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4826975",
-      "longitude": "-81.5636295"
-    }
-  },
-  {
-    "name": "Kenilworth Park Playground",
-    "territory": [
-      "Near East Side",
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.5074027",
-      "longitude": "-81.5911946"
-    }
-  },
-  {
-    "name": "Kossuth",
-    "territory": [
-      "University Circle"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.503777",
-      "longitude": "-81.611159"
-    }
-  },
-  {
-    "name": "Larchmere Community Sign",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4931606",
-      "longitude": "-81.6009978"
-    }
-  },
-  {
-    "name": "Little Italy",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.50859",
-      "longitude": "-81.59785"
-    }
-  },
-  {
-    "name": "Little Italy Mural",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.508574",
-      "longitude": "-81.600009"
-    }
-  },
-  {
-    "name": "Lomond Little Free Library",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4621939",
-      "longitude": "-81.5404392"
-    }
-  },
-  {
-    "name": "Lower Shaker Lake",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4906796",
-      "longitude": "-81.5821296"
-    }
-  },
-  {
-    "name": "Magnolia Historical District",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.5117700",
-      "longitude": "-81.6158460"
-    }
-  },
-  {
-    "name": "Marcus Alonzo Hanna",
-    "territory": [
-      "University Circle"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.504309",
-      "longitude": "-81.611756"
-    }
-  },
-  {
-    "name": "Memorial Dave Black",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5270392",
-      "longitude": "-81.5746315"
-    }
-  },
-  {
-    "name": "Melt",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5014651",
-      "longitude": "-81.5561845"
-    }
-  },
-  {
-    "name": "MOCA",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.509167",
-      "longitude": "-81.604723"
-    }
-  },
-  {
-    "name": "Morning Star Sculpture",
-    "aliases": [
-      "Morningstar"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.504233",
-      "longitude": "-81.608064"
-    }
-  },
-  {
-    "name": "Nature Center",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4850939",
-      "longitude": "-81.5736153"
-    }
-  },
-  {
-    "name": "New Song Church",
-    "description": "Please note that New Song churchgoers have politely asked members of our community to avoid gathering here, as it has made their congregants feel uncomfortable. As such, community policy is to avoid raiding at New Song.",
-    "territory": [
+    {
+        "name": "100K Veale's Turbine",
+        "aliases": [
+            "100K Veale",
+            "Turbine"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.502484",
+            "longitude": "-81.605398"
+        }
+    },
+    {
+        "name": "1933 CHURCH",
+        "territory": [
+            "Near East Side",
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5034997",
+            "longitude": "-81.5939203"
+        }
+    },
+    {
+        "name": "3D Plus",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.506977",
+            "longitude": "-81.606475"
+        }
+    },
+    {
+        "name": "A.D. 1950 Heights Branch YMCA",
+        "aliases": [
+            "Dobama"
+        ],
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4954932",
+            "longitude": "-81.5654341"
+        }
+    },
+    {
+        "name": "Alta House",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.50855",
+            "longitude": "-81.59598"
+        }
+    },
+    {
+        "name": "Art Studio Mural",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5018",
+            "longitude": "-81.60319"
+        }
+    },
+    {
+        "name": "Batter Up",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.511979",
+            "longitude": "-81.601693"
+        }
+    },
+    {
+        "name": "Shaker Heights Library Bertram Branch",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4764016",
+            "longitude": "-81.5351963"
+        }
+    },
+    {
+        "name": "Bird Friendly Habitat",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4949954",
+            "longitude": "-81.5806165"
+        }
+    },
+    {
+        "name": "Black Angular Statue",
+        "aliases": [
+            "KSL"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.506982",
+            "longitude": "-81.609463"
+        }
+    },
+    {
+        "name": "Bumblebee",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5008749",
+            "longitude": "-81.5651858"
+        }
+    },
+    {
+        "name": "Cain Park",
+        "territory": [
+            "Near East Side"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5064714",
+            "longitude": "-81.5604621"
+        }
+    },
+    {
+        "name": "Cast Iron Waves",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4637642",
+            "longitude": "-81.5590912"
+        }
+    },
+    {
+        "name": "Cedar Avenue Mural",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5012536",
+            "longitude": "-81.5931137"
+        }
+    },
+    {
+        "name": "Cedar Fairmount Business District",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5012106",
+            "longitude": "-81.5897705"
+        }
+    },
+    {
+        "name": "Cedar Lee Theater",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5010055",
+            "longitude": "-81.5652931"
+        }
+    },
+    {
+        "name": "Christ Episcopal Church Unity of",
+        "aliases": [
+            "CEC"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4661785",
+            "longitude": "-81.5357472"
+        }
+    },
+    {
+        "name": "Christ Our Redeemer Church",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5125382",
+            "longitude": "-81.5725181"
+        }
+    },
+    {
+        "name": "Church of Christ",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5206008",
+            "longitude": "-81.5563266"
+        }
+    },
+    {
+        "name": "Cleveland Heights-University Heights Public Library",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4957825",
+            "longitude": "-81.5649459"
+        }
+    },
+    {
+        "name": "Cleveland Institute of Music",
+        "aliases": [
+            "CIM"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5121954",
+            "longitude": "-81.6090934"
+        }
+    },
+    {
+        "name": "Clock Tower at Wendys",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4641079",
+            "longitude": "-81.5365952"
+        }
+    },
+    {
+        "name": "Coventry Arch",
+        "territory": [
+            "Near East Side"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5078565",
+            "longitude": "-81.5795351"
+        }
+    },
+    {
+        "name": "Cumberland Pool",
+        "territory": [
+            "Near East Side"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5118735",
+            "longitude": "-81.5687978"
+        }
+    },
+    {
+        "name": "Disciples Christian Church",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.520774",
+            "longitude": "-81.5488082"
+        }
+    },
+    {
+        "name": "Dittrick Museum of Medical History",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.506036",
+            "longitude": "-81.608576"
+        }
+    },
+    {
+        "name": "Eagle Statue",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5048593",
+            "longitude": "-81.5801724"
+        }
+    },
+    {
+        "name": "East Cleveland Township Cemetery",
+        "aliases": [
+            "ECTC"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.514047",
+            "longitude": "-81.602314"
+        }
+    },
+    {
+        "name": "Eastview United Church of Christ",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.464583",
+            "longitude": "-81.5716359"
+        }
+    },
+    {
+        "name": "Euclid Golf Historic District",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4984775",
+            "longitude": "-81.5801569"
+        }
+    },
+    {
+        "name": "Flukes",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.502868",
+            "longitude": "-81.617233"
+        }
+    },
+    {
+        "name": "Forest Hill Church",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5190748",
+            "longitude": "-81.5699495"
+        }
+    },
+    {
+        "name": "Forest Hill Park",
+        "territory": [
+            "Near East Side"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5230243",
+            "longitude": "-81.5733638"
+        }
+    },
+    {
+        "name": "Free Little Library",
+        "territory": [
+            "Near East Side"
+        ],
+        "aliases": [
+            "FLL"
+        ],
+        "location": {
+            "latitude": "41.495958",
+            "longitude": "-81.5820074"
+        }
+    },
+    {
+        "name": "Getting Gas in The 20’s",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.510414",
+            "longitude": "-81.603762"
+        }
+    },
+    {
+        "name": "Gimme Java Coffee",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.466308",
+            "longitude": "-81.5648362"
+        }
+    },
+    {
+        "name": "Gridley Triangle Park",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.461266",
+            "longitude": "-81.5501042"
+        }
+    },
+    {
+        "name": "Grinning Lady",
+        "territory": [
+            "University Circle"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.512746",
+            "longitude": "-81.611585"
+        }
+    },
+    {
+        "name": "Harrison Dillard Sculpture",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.50173",
+            "longitude": "-81.6084"
+        }
+    },
+    {
+        "name": "Healix II",
+        "aliases": [
+            "Healix 2"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.513885",
+            "longitude": "-81.599643"
+        }
+    },
+    {
+        "name": "Heights Christian Church",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.465762",
+            "longitude": "-81.558595"
+        }
+    },
+    {
+        "name": "Highland Cemetery Lord Monument",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.463075",
+            "longitude": "-81.5284349"
+        }
+    },
+    {
+        "name": "Highland Park Cemetery",
+        "aliases": [
+            "HPC"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4601291",
+            "longitude": "-81.532816"
+        }
+    },
+    {
+        "name": "Hot Sauce Williams",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4569963",
+            "longitude": "-81.5650912"
+        }
+    },
+    {
+        "name": "Iris S and Bert Wolstein Research Building",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.506389",
+            "longitude": "-81.603372"
+        }
+    },
+    {
+        "name": "Jacob Russell",
+        "territory": [
+            "Near East Side",
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4826975",
+            "longitude": "-81.5636295"
+        }
+    },
+    {
+        "name": "Kenilworth Park Playground",
+        "territory": [
+            "Near East Side",
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5074027",
+            "longitude": "-81.5911946"
+        }
+    },
+    {
+        "name": "Kingdom Hall of Jehovah Witnesses",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4549875",
+            "longitude": "-81.5651895"
+        }
+    },
+    {
+        "name": "Kossuth",
+        "territory": [
+            "University Circle"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.503777",
+            "longitude": "-81.611159"
+        }
+    },
+    {
+        "name": "Larchmere Community Sign",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4931606",
+            "longitude": "-81.6009978"
+        }
+    },
+    {
+        "name": "Little Italy",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.50859",
+            "longitude": "-81.59785"
+        }
+    },
+    {
+        "name": "Little Italy Mural",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.508574",
+            "longitude": "-81.600009"
+        }
+    },
+    {
+        "name": "Lomond Little Free Library",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4621939",
+            "longitude": "-81.5404392"
+        }
+    },
+    {
+        "name": "Lower Shaker Lake",
+        "territory": [
+            "Near East Side",
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4906796",
+            "longitude": "-81.5821296"
+        }
+    },
+    {
+        "name": "Magnolia Historical District",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5117700",
+            "longitude": "-81.6158460"
+        }
+    },
+    {
+        "name": "Marcus Alonzo Hanna",
+        "territory": [
+            "University Circle"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.504309",
+            "longitude": "-81.611756"
+        }
+    },
+    {
+        "name": "Memorial Dave Black",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5270392",
+            "longitude": "-81.5746315"
+        }
+    },
+    {
+        "name": "Melt",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5014651",
+            "longitude": "-81.5561845"
+        }
+    },
+    {
+        "name": "MOCA",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.509167",
+            "longitude": "-81.604723"
+        }
+    },
+    {
+        "name": "Morning Star Sculpture",
+        "aliases": [
+            "Morningstar"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.504233",
+            "longitude": "-81.608064"
+        }
+    },
+    {
+        "name": "Nature Center",
+        "territory": [
+            "Near East Side",
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4850939",
+            "longitude": "-81.5736153"
+        }
+    },
+    {
+        "name": "New Song Church",
+        "description": "Please note that New Song churchgoers have politely asked members of our community to avoid gathering here, as it has made their congregants feel uncomfortable. As such, community policy is to avoid raiding at New Song.",
+        "territory": [
 
-    ],
-    "location": {
-      "latitude": "41.5137857",
-      "longitude": "-81.5538883"
-    }
-  },
-  {
-    "name": "Night Passing the Earth to Day",
-    "aliases": [
-      "NPD"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.505077",
-      "longitude": "-81.610957"
-    }
-  },
-  {
-    "name": "Nobby's Ballpark",
-    "aliases": [
-      "Nobby"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.514657",
-      "longitude": "-81.604477"
-    }
-  },
-  {
-    "name": "Nottingham Bell Tower",
-    "territory": [
-      "Near East Side",
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.5033421",
-      "longitude": "-81.5993688"
-    }
-  },
-  {
-    "name": "Oeccan",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.509445",
-      "longitude": "-81.607627"
-    }
-  },
-  {
-    "name": "Picnic Shelter 1",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5198621",
-      "longitude": "-81.572004"
-    }
-  },
-  {
-    "name": "POW - MIA Stone",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.51447",
-      "longitude": "-81.61374"
-    }
-  },
-  {
-    "name": "Purvis Park",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5012824",
-      "longitude": "-81.5267189"
-    }
-  },
-  {
-    "name": "Robert Fox Tuve Memorial",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.503441",
-      "longitude": "-81.606916"
-    }
-  },
-  {
-    "name": "Rockefeller's Eagle Plaza",
-    "aliases": [
-      "Rockefeller Eagle Plaza"
-    ],
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5160392",
-      "longitude": "-81.5688503"
-    }
-  },
-  {
-    "name": "Rockefeller Park",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.5117700",
-      "longitude": "-81.6158460"
-    }
-  },
-  {
-    "name": "Seedling Sculptures",
-    "aliases": [
-      "Seedlings",
-      "Seeds"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.510461",
-      "longitude": "-81.610353"
-    }
-  },
-  {
-    "name": "Shaker Heights City Hall",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4675439",
-      "longitude": "-81.565597"
-    }
-  },
-  {
-    "name": "Shaker Heights City Sign",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4918105",
-      "longitude": "-81.5928439"
-    }
-  },
-  {
-    "name": "Shaker Heights Community Church",
-    "aliases": [
-      "SHCC"
-    ],
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.462859",
-      "longitude": "-81.5384738"
-    }
-  },
-  {
-    "name": "Shaker Heights Public Library",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4658963",
-      "longitude": "-81.5664738"
-    }
-  },
-  {
-    "name": "Shaker Lake Bioswale Plaque",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4879024",
-      "longitude": "-81.5812878"
-    }
-  },
-  {
-    "name": "Shaker Wooden Playscapes",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4654581",
-      "longitude": "-81.567096"
-    }
-  },
-  {
-    "name": "Sister Cities Rose Garden",
-    "territory": [
-      "Near East Side"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.4826504",
-      "longitude": "-81.5554632"
-    }
-  },
-  {
-    "name": "St Ann's Church",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5009524",
-      "longitude": "-81.5797599"
-    }
-  },
-  {
-    "name": "Spirit Corner",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5111688",
-      "longitude": "-81.577391"
-    }
-  },
-  {
-    "name": "Sprint Store",
-    "territory": [
-      "Near East Side"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.5022908",
-      "longitude": "-81.5384437"
-    }
-  },
-  {
-    "name": "St Peter's Lutheran Church",
-    "aliases": [
-      "Saint Peter's Lutheran Church"
-    ],
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4657827",
-      "longitude": "-81.5528263"
-    }
-  },
-  {
-    "name": "St Dominic Church",
-    "aliases": [
-      "Saint Dominic Church",
-      "St Dom",
-      "Saint Dom"
-    ],
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4660837",
-      "longitude": "-81.5454586"
-    }
-  },
-  {
-    "name": "Starbucks",
-    "territory": [
-      "Near East Side"
-    ],
-    "is_ex_eligible": true,
-    "location": {
-      "latitude": "41.5017525",
-      "longitude": "-81.5383793"
-    }
-  },
-  {
-    "name": "Taylor Road Synagogue",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5062344",
-      "longitude": "-81.5561268"
-    }
-  },
-  {
-    "name": "The Arthur G. McKee House",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4974083",
-      "longitude": "-81.6030981"
-    }
-  },
-  {
-    "name": "The Cozad-Bates House / Anti-Slavery and Abolition",
-    "aliases": [
-      "Cozad",
-      "Cozad Bates"
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.508533",
-      "longitude": "-81.603087"
-    }
-  },
-  {
-    "name": "The Elephant Stairs",
-    "alias": [
-      "The Elephant Stair"
-    ],
-    "territory": [
-      "Near East Side",
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.5009563",
-      "longitude": "-81.6005917"
-    }
-  },
-  {
-    "name": "The Pentecostal Church of Christ",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.505608",
-      "longitude": "-81.614772"
-    }
-  },
-  {
-    "name": "Thinker",
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.508298",
-      "longitude": "-81.611534"
-    }
-  },
-  {
-    "name": "This Tablet Marks the Final Re",
-    "aliases": [
-      "Tablet"
-    ],
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4653803",
-      "longitude": "-81.5640631"
-    }
-  },
-  {
-    "name": "Thornton Park",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.469911",
-      "longitude": "-81.5360129"
-    }
-  },
-  {
-    "name": "Thornton Park Playground",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4697361",
-      "longitude": "-81.5345702"
-    }
-  },
-  {
-    "name": "Tooth Sculpture",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4996636",
-      "longitude": "-81.5562066"
-    }
-  },
-  {
-    "name": "Treehouse at Horseshoe Lakes",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.482601",
-      "longitude": "-81.5582007"
-    }
-  },
-  {
-    "name": "Twin Flags Building",
-    "territory": [
-      "Near East Side",
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.5081324",
-      "longitude": "-81.589061"
-    }
-  },
-  {
-    "name": "Unitarian Universalist Society of Cleveland",
-    "territory": [
-      "Near East Side"
-    ],
-    "aliases": [
-      "UU",
-      "UU Society",
-      "UU Church"
-    ],
-    "location": {
-      "latitude": "41.508289",
-      "longitude": "-81.5826344"
-    }
-  },
-  {
-    "name": "Unity Center Church",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.4866826",
-      "longitude": "-81.5557187"
-    }
-  },
-  {
-    "name": "University Square Bell",
-    "territory": [
-      "Near East Side"
-    ],
-    "is_ex_eligible": false,
-    "location": {
-      "latitude": "41.501182",
-      "longitude": "-81.5360726"
-    }
-  },
-  {
-    "name": "Uqbah Mosque Foundation",
-    "aliases": [
+        ],
+        "location": {
+            "latitude": "41.5137857",
+            "longitude": "-81.5538883"
+        }
+    },
+    {
+        "name": "Night Passing the Earth to Day",
+        "aliases": [
+            "NPD"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.505077",
+            "longitude": "-81.610957"
+        }
+    },
+    {
+        "name": "Nobby's Ballpark",
+        "aliases": [
+            "Nobby"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.514657",
+            "longitude": "-81.604477"
+        }
+    },
+    {
+        "name": "Nottingham Bell Tower",
+        "territory": [
+            "Near East Side",
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5033421",
+            "longitude": "-81.5993688"
+        }
+    },
+    {
+        "name": "Oeccan",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.509445",
+            "longitude": "-81.607627"
+        }
+    },
+    {
+        "name": "Picnic Shelter 1",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5198621",
+            "longitude": "-81.572004"
+        }
+    },
+    {
+        "name": "POW - MIA Stone",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.51447",
+            "longitude": "-81.61374"
+        }
+    },
+    {
+        "name": "Purvis Park",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5012824",
+            "longitude": "-81.5267189"
+        }
+    },
+    {
+        "name": "Robert Fox Tuve Memorial",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.503441",
+            "longitude": "-81.606916"
+        }
+    },
+    {
+        "name": "Rockefeller's Eagle Plaza",
+        "aliases": [
+            "Rockefeller Eagle Plaza"
+        ],
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5160392",
+            "longitude": "-81.5688503"
+        }
+    },
+    {
+        "name": "Rockefeller Park",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5117700",
+            "longitude": "-81.6158460"
+        }
+    },
+    {
+        "name": "Seedling Sculptures",
+        "aliases": [
+            "Seedlings",
+            "Seeds"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.510461",
+            "longitude": "-81.610353"
+        }
+    },
+    {
+        "name": "Shaker Heights City Hall",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4675439",
+            "longitude": "-81.565597"
+        }
+    },
+    {
+        "name": "Shaker Heights City Sign",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4918105",
+            "longitude": "-81.5928439"
+        }
+    },
+    {
+        "name": "Shaker Heights Community Church",
+        "aliases": [
+            "SHCC",
+            "SHCCC"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.462859",
+            "longitude": "-81.5384738"
+        }
+    },
+    {
+        "name": "Shaker Heights Public Library",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4658963",
+            "longitude": "-81.5664738"
+        }
+    },
+    {
+        "name": "Shaker Lake Bioswale Plaque",
+        "territory": [
+            "Near East Side",
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4879024",
+            "longitude": "-81.5812878"
+        }
+    },
+    {
+        "name": "Shaker Wooden Playscape",
+        "alias": [
+            "Shaker Wooden Playscape"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4654581",
+            "longitude": "-81.567096"
+        }
+    },
+    {
+        "name": "Sister Cities Rose Garden",
+        "territory": [
+            "Near East Side",
+            "Shaker Heights"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.4826504",
+            "longitude": "-81.5554632"
+        }
+    },
+    {
+        "name": "Southerly Park",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.4781313",
+            "longitude": "-81.5749246"
+        }
+    },
+    {
+        "name": "Southerly Park Fit Trail #32",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.4799129",
+            "longitude": "-81.5742376"
+        }
+    },
+    {
+        "name": "Southerly Park Northwest Entrance",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4817716",
+            "longitude": "-81.5747795"
+        }
+    },
+    {
+        "name": "Spirit Corner",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5111688",
+            "longitude": "-81.577391"
+        }
+    },
+    {
+        "name": "Sprint Store",
+        "territory": [
+            "Near East Side"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5022908",
+            "longitude": "-81.5384437"
+        }
+    },
+    {
+        "name": "St Ann's Church",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5009524",
+            "longitude": "-81.5797599"
+        }
+    },
+    {
+        "name": "St Peter's Lutheran Church",
+        "aliases": [
+            "Saint Peter's Lutheran Church"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4657827",
+            "longitude": "-81.5528263"
+        }
+    },
+    {
+        "name": "St Dominic Church",
+        "aliases": [
+            "Saint Dominic Church",
+            "St Dom",
+            "Saint Dom"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4660837",
+            "longitude": "-81.5454586"
+        }
+    },
+    {
+        "name": "St Mark's Presbyterian Church",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.465358",
+            "longitude": "-81.5234642"
+        }
+    },
+    {
+        "name": "Starbucks",
+        "territory": [
+            "Near East Side"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5017525",
+            "longitude": "-81.5383793"
+        }
+    },
+    {
+        "name": "Taylor Road Synagogue",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5062344",
+            "longitude": "-81.5561268"
+        }
+    },
+    {
+        "name": "The Arthur G. McKee House",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4974083",
+            "longitude": "-81.6030981"
+        }
+    },
+    {
+        "name": "The Cozad-Bates House / Anti-Slavery and Abolition",
+        "aliases": [
+            "Cozad",
+            "Cozad Bates"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.508533",
+            "longitude": "-81.603087"
+        }
+    },
+    {
+        "name": "The Elephant Stairs",
+        "alias": [
+            "The Elephant Stair"
+        ],
+        "territory": [
+            "Near East Side",
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5009563",
+            "longitude": "-81.6005917"
+        }
+    },
+    {
+        "name": "The Pentecostal Church of Christ",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.505608",
+            "longitude": "-81.614772"
+        }
+    },
+    {
+        "name": "The Vue",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4642729",
+            "longitude": "-81.5166375"
+        }
+    },
+    {
+        "name": "Thinker",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.508298",
+            "longitude": "-81.611534"
+        }
+    },
+    {
+        "name": "This Tablet Marks the Final Re",
+        "aliases": [
+            "Tablet"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4653803",
+            "longitude": "-81.5640631"
+        }
+    },
+    {
+        "name": "Thornton Park",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.469911",
+            "longitude": "-81.5360129"
+        }
+    },
+    {
+        "name": "Thornton Park Playground",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4697361",
+            "longitude": "-81.5345702"
+        }
+    },
+    {
+        "name": "Tooth Sculpture",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4996636",
+            "longitude": "-81.5562066"
+        }
+    },
+    {
+        "name": "Treehouse at Horseshoe Lakes",
+        "territory": [
+            "Near East Side",
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.482601",
+            "longitude": "-81.5582007"
+        }
+    },
+    {
+        "name": "Twin Flags Building",
+        "territory": [
+            "Near East Side",
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5081324",
+            "longitude": "-81.589061"
+        }
+    },
+    {
+        "name": "Unitarian Universalist Society of Cleveland",
+        "territory": [
+            "Near East Side"
+        ],
+        "aliases": [
+            "UU",
+            "UU Society",
+            "UU Church"
+        ],
+        "location": {
+            "latitude": "41.508289",
+            "longitude": "-81.5826344"
+        }
+    },
+    {
+        "name": "Unity Center Church",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4866826",
+            "longitude": "-81.5557187"
+        }
+    },
+    {
+        "name": "University Square Bell",
+        "territory": [
+            "Near East Side"
+        ],
+        "is_ex_eligible": false,
+        "location": {
+            "latitude": "41.501182",
+            "longitude": "-81.5360726"
+        }
+    },
+    {
+        "name": "US Post Office, Green Road",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4595295",
+            "longitude": "-81.516746"
+        }
+    },
+    {
+        "name": "Uqbah Mosque Foundation",
+        "aliases": [
 
-    ],
-    "territory": [
-      "University Circle"
-    ],
-    "location": {
-      "latitude": "41.498191",
-      "longitude": "-81.609389"
+        ],
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.498191",
+            "longitude": "-81.609389"
+        }
+    },
+    {
+        "name": "Veterans Memorial Flag and Field",
+        "aliases": [
+            "Veterans"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.463117",
+            "longitude": "-81.5259549"
+        }
+    },
+    {
+        "name": "Van Swerigen Demonstration Ho",
+
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4740587",
+            "longitude": "-81.5785643"
+        }
+    },
+    {
+        "name": "Veterans of the Vietnam and Korean Wars Memorial",
+        "aliases": [
+            "Vets"
+        ],
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5143329",
+            "longitude": "-81.5713379"
+        }
+    },
+    {
+        "name": "Walmart Gazebo",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.509013",
+            "longitude": "-81.5385851"
+        }
+    },
+    {
+        "name": "Warrensville Rapid Station",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.465946",
+            "longitude": "-81.5378069"
+        }
+    },
+    {
+        "name": "Winslow Court Spires",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4656982",
+            "longitude": "-81.5623577"
+        }
     }
-  },
-  {
-    "name": "Veterans Memorial Flag and Field",
-    "aliases": [
-      "Veterans"
-    ],
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.463117",
-      "longitude": "-81.5259549"
-    }
-  },
-  {
-    "name": "Veterans of the Vietnam and Korean Wars Memorial",
-    "aliases": [
-      "Vets"
-    ],
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.5143329",
-      "longitude": "-81.5713379"
-    }
-  },
-  {
-    "name": "Walmart Gazebo",
-    "territory": [
-      "Near East Side"
-    ],
-    "location": {
-      "latitude": "41.509013",
-      "longitude": "-81.5385851"
-    }
-  },
-  {
-    "name": "Warrensville Rapid Station",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.465946",
-      "longitude": "-81.5378069"
-    }
-  },
-  {
-    "name": "Winslow Court Spires",
-    "territory": [
-      "Shaker"
-    ],
-    "location": {
-      "latitude": "41.4656982",
-      "longitude": "-81.5623577"
-    }
-  }
 ]

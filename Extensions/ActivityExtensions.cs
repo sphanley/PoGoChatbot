@@ -60,13 +60,12 @@ namespace PoGoChatbot
 
         public static bool IsCreatedPoll(this IMessageActivity activity)
         {
-            JArray channelData;
-            return (activity.TryGetChannelData(out channelData) && channelData.Any(token => token.ToObject<GroupMeAttachment>().Type == "poll"));
+            return (activity.TryGetChannelData(out JArray channelData) && channelData.Any(token => token.ToObject<GroupMeAttachment>().Type == "poll"));
         }
 
         public static void SetGroupNameFromConversationId(this IActivity activity)
         {
-            activity.Conversation.Name = VariableResources.GetGroupName(activity);
+            activity.Conversation.Name = VariableResources.GroupName;
         }
     }
 }
