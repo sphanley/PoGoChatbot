@@ -61,15 +61,21 @@ namespace PoGoChatbot.Helpers
 
         private static IEnumerable<Gym> FindNameOrAliasApproximation(string searchTerm, string groupName = null)
         {
+            var normalizedSearchTerm = NormalizeStringForGymSearch(searchTerm);
+            var wordsInSearchTerm = normalizedSearchTerm.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
             var candidates = gyms.Where(gym =>
             {
-                var normalizedSearchTerm = NormalizeStringForGymSearch(searchTerm);
                 var normalizedGymName = NormalizeStringForGymSearch(gym.Name);
-
-                var wordsInSearchTerm = normalizedSearchTerm.Split(" ", StringSplitOptions.RemoveEmptyEntries);
                 var wordsInGymName = normalizedGymName.Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
                 if (!wordsInSearchTerm.Except(wordsInGymName).Any()) return true;
+
+                foreach (var alias in gym.Aliases)
+                {
+                    var wordsInAlias = NormalizeStringForGymSearch(alias).Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                    if (!wordsInSearchTerm.Except(wordsInAlias).Any()) return true;
+                }
 
                 return false;
             });
@@ -89,6 +95,5 @@ namespace PoGoChatbot.Helpers
                 .Replace("-", " ")
                 .Replace("\\p{P}+", "");
         }
-
     }
 }
