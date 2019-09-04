@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using DuoVia.FuzzyStrings;
 using Newtonsoft.Json;
 using PoGoChatbot.Models;
@@ -68,13 +69,13 @@ namespace PoGoChatbot.Helpers
             {
                 var normalizedGymName = NormalizeStringForGymSearch(gym.Name);
                 var wordsInGymName = normalizedGymName.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-
-                if (!wordsInSearchTerm.Except(wordsInGymName).Any()) return true;
+               
+                if (wordsInGymName.IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm)) return true;
 
                 foreach (var alias in gym.Aliases)
                 {
                     var wordsInAlias = NormalizeStringForGymSearch(alias).Split(" ", StringSplitOptions.RemoveEmptyEntries);
-                    if (!wordsInSearchTerm.Except(wordsInAlias).Any()) return true;
+                    if (wordsInAlias.IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm)) return true;
                 }
 
                 return false;
@@ -90,10 +91,23 @@ namespace PoGoChatbot.Helpers
 
         private static string NormalizeStringForGymSearch(string input)
         {
-            return input
-                .ToLowerInvariant()
-                .Replace("-", " ")
-                .Replace("\\p{P}+", "");
+            var punctuationRegex = new Regex("\\p{P}+");
+            return punctuationRegex.Replace(input.ToLowerInvariant().Replace("-", " "), string.Empty);
+        }
+
+        private static bool IsPosessivenessAgnosticSupersetOf(this IEnumerable<string> superset, IEnumerable<string> subset)
+        {
+            var permutations = superset.ToList();
+            // For each word, create a posessive form permutation with a trailing "s",
+            // as well as a version with the trailing "s" removed if present initially
+            foreach (var str in superset)
+            {
+                if (str.EndsWith('s')) permutations.Add(str.Substring(0, str.Length - 1));
+                permutations.Add($"{str}s");
+            }
+
+            // Check whether any words exist in the subset which are not in the superset or acceptable permutations
+            return !subset.Except(permutations).Any();
         }
     }
 }
