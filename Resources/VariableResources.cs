@@ -19,16 +19,13 @@ namespace PoGoChatbot
         {
             if (string.IsNullOrEmpty(groupName)) groupName = GroupName;
 
-            switch (groupName.ToLowerInvariant())
+            switch (groupName)
             {
-                case "near east side":
-                case "near eastside":
+                case "Near East Side":
                     return "https://bit.ly/nesraidmap";
-                case "university circle":
-                case "uc":
+                case "University Circle":
                     return "https://bit.ly/ucraidmap";
-                case "shaker heights":
-                case "shaker":
+                case "Shaker Heights":
                     return "https://bit.ly/shakerheightsraidmap";
                 default:
                     return string.Empty;
@@ -45,6 +42,24 @@ namespace PoGoChatbot
                     return "https://bit.ly/ucpogoinfo";
                 case "Shaker Heights":
                     return "https://bit.ly/shakerheightspogoinfo";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        public static string ValidateAndNormalizeGroupName(string groupName)
+        {
+            switch (groupName.ToLowerInvariant())
+            {
+                case "near east side":
+                case "near eastside":
+                    return "Near East Side";
+                case "university circle":
+                case "uc":
+                    return "University Circle";
+                case "shaker heights":
+                case "shaker":
+                    return "Shaker Heights";
                 default:
                     return string.Empty;
             }

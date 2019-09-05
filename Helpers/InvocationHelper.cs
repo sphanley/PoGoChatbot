@@ -69,20 +69,21 @@ namespace PoGoChatbot.Helpers
         private static async Task HandleMapInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             Regex mapRegex = new Regex($"^!map \"?([^\"]+)\"?$", RegexOptions.IgnoreCase);
-            var groupNameArgument = mapRegex.Match(turnContext.Activity.Text).Groups?.ElementAtOrDefault(1)?.Value;
-            var mapUrl = VariableResources.GetMapUrl(groupNameArgument);
+            var argument = mapRegex.Match(turnContext.Activity.Text).Groups?.ElementAtOrDefault(1)?.Value ?? string.Empty;
+            var normalizedGroupName = VariableResources.ValidateAndNormalizeGroupName(argument);
+            var mapUrl = VariableResources.GetMapUrl(normalizedGroupName);
 
             if (!string.IsNullOrEmpty(mapUrl))
             {
-                bool argumentMatchesChatName = groupNameArgument == turnContext.Activity.Conversation.Name;
                 var messageText = $"Here's a map of the gyms where ";
-                messageText += argumentMatchesChatName ? "we  typically raid: " : $"the {groupNameArgument} group typically raids: ";
+                bool argumentIsDifferentGroup = !string.IsNullOrEmpty(normalizedGroupName) && normalizedGroupName != turnContext.Activity.Conversation.Name;
+                messageText += argumentIsDifferentGroup ? $"the {normalizedGroupName} group typically raids: " : "we  typically raid: ";
 
                 await turnContext.SendActivityAsync(MessageFactory.Text($"{messageText} {mapUrl}"), cancellationToken);
             }
             else
             {
-                await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, I couldn't find a group matching the name \"{groupNameArgument}\". The supported groups are Near East Side, Shaker Heights, and University Circle"));
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, I couldn't find a group matching the name \"{normalizedGroupName}\". The supported groups are Near East Side, Shaker Heights, and University Circle"));
             }
         }
 
