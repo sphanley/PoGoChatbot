@@ -68,7 +68,22 @@ namespace PoGoChatbot.Helpers
 
         private static async Task HandleMapInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            await turnContext.SendActivityAsync(MessageFactory.Text($"{Constants.MapMessage} {VariableResources.MapUrl}"), cancellationToken);
+            Regex mapRegex = new Regex($"^!map \"?([^\"]+)\"?$", RegexOptions.IgnoreCase);
+            var groupNameArgument = mapRegex.Match(turnContext.Activity.Text).Groups?.ElementAtOrDefault(1)?.Value;
+            var mapUrl = VariableResources.GetMapUrl(groupNameArgument);
+
+            if (!string.IsNullOrEmpty(mapUrl))
+            {
+                bool argumentMatchesChatName = groupNameArgument == turnContext.Activity.Conversation.Name;
+                var messageText = $"Here's a map of the gyms where ";
+                messageText += argumentMatchesChatName ? "we  typically raid: " : $"the {groupNameArgument} group typically raids: ";
+
+                await turnContext.SendActivityAsync(MessageFactory.Text($"{messageText} {mapUrl}"), cancellationToken);
+            }
+            else
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, I couldn't find a group matching the name \"{groupNameArgument}\". The supported groups are Near East Side, Shaker Heights, and University Circle"));
+            }
         }
 
         private static async Task HandleRaidBossesInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
