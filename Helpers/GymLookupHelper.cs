@@ -24,12 +24,12 @@ namespace PoGoChatbot.Helpers
                 }
             }
 
-            // Search for gyms with names which match exactly 
-            IEnumerable<Gym> matches = FindNameOrAliasMatch(searchTerm, groupName);
+            // Search for gyms with names or aliases which match exactly 
+            IEnumerable<Gym> matches = FindNameMatch(searchTerm, groupName);
             if (matches.Any()) return matches.ToList();
 
             // If none found, search for gyms with names which match with Levenshtein distance of <= 2, and territory matches group name
-            matches = FindNameOrAliasMatch(searchTerm, groupName, 2);
+            matches = FindNameMatch(searchTerm, groupName, 2, false);
             if (matches.Any()) return matches.ToList();
 
             // If none found, search for gyms with names which contain all of the word(s) in the search term, ignoring case or punctuation
@@ -37,7 +37,7 @@ namespace PoGoChatbot.Helpers
             if (matches.Any()) return matches.ToList();
 
             // If none found, search for gyms where the name/alias matches with Levenshtein distance of <= 2, regardless of group territory
-            matches = FindNameOrAliasMatch(searchTerm, levenshteinDistance: 2);
+            matches = FindNameMatch(searchTerm, maxLevenshteinDistance: 2);
             if (matches.Any()) return matches.ToList();
 
             // If all else has failed, return any approximate matches, regardless of group territory
@@ -45,12 +45,18 @@ namespace PoGoChatbot.Helpers
             return matches.ToList();
         }
 
-        private static IEnumerable<Gym> FindNameOrAliasMatch(string searchTerm, string groupName = null, int levenshteinDistance = 0)
+        private static IEnumerable<Gym> FindNameMatch(string searchTerm, string groupName = null, int maxLevenshteinDistance = 0, bool shouldSearchAliases = true)
         {
+
             var matches = gyms.Where(gym =>
-                gym.Name.LevenshteinDistance(searchTerm) <= levenshteinDistance ||
-                gym.Aliases.Any(alias => alias.LevenshteinDistance(searchTerm) <= levenshteinDistance)
-            );
+            {
+                // Enforce maximum Levenshtien distance of one less than half of gym name length, to avoid overly fuzzing gyms with very short names
+                var levenshtienDistance = Math.Min(maxLevenshteinDistance, (gym.Name.Length / 2)-1);
+
+                if (gym.Name.LevenshteinDistance(searchTerm) <= levenshtienDistance) return true;
+                if (shouldSearchAliases && gym.Aliases.Any(alias => alias.ToLowerInvariant() == searchTerm)) return true;
+                return false;
+            });
 
             if (!string.IsNullOrEmpty(groupName))
             {
