@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PoGoChatbot
 {
@@ -12,7 +14,7 @@ namespace PoGoChatbot
         // These public variables should have their associated environment variables set on any deployment environment
         public static readonly string GroupMeBotId = Environment.GetEnvironmentVariable("GroupMeBotId") ?? DefaultBotId;
         public static readonly string GroupName = Environment.GetEnvironmentVariable("GroupMeGroupName") ?? DefaultGroupName;
-        public static readonly string[] GymNameExamples = (Environment.GetEnvironmentVariable("GymNameExamples") ?? DefaultGymNameExamples).Split(',');
+        public static readonly List<string> GymNameExamples = (Environment.GetEnvironmentVariable("GymNameExamples") ?? DefaultGymNameExamples).Split(',').ToList();
         public static readonly string WelcomePacketUrl = GetWelcomePacketUrl();
 
         public static string GetMapUrl(string groupName)
