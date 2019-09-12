@@ -8,7 +8,7 @@ using PoGoChatbot.Models;
 
 namespace PoGoChatbot.Helpers
 {
-    public class PoGoApiHelper
+    public static class PoGoApiHelper
     {
         private static readonly HttpClient poGoApiClient = new HttpClient { BaseAddress = new Uri("https://pogoapi.net/") };
         private static List<Pokemon> pokemonList = new List<Pokemon>();
