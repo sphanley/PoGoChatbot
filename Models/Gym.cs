@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace PoGoChatbot.Models
 {
@@ -7,9 +8,9 @@ namespace PoGoChatbot.Models
         [JsonProperty("name")]
         public string Name { get; set; }
         [JsonProperty("aliases")]
-        public string[] Aliases { get; set; } = new string[0];
+        public List<string> Aliases { get; set; } = new List<string>();
         [JsonProperty("territory")]
-        public string[] Territory { get; set; } = new string[0];
+        public List<string> Territory { get; set; } = new List<string>();
         [JsonProperty("description")]
         public string Description { get; set; }
         [JsonProperty("is_ex_eligible")]

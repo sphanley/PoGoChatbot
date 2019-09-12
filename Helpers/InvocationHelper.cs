@@ -117,7 +117,7 @@ namespace PoGoChatbot.Helpers
             var pokemon = await PoGoApiHelper.GetPokemonType(searchTerm);
             if (pokemon != null)
             {
-                var typeOrTypes = pokemon.Type.Length == 1 ? "type" : "types";
+                var typeOrTypes = pokemon.Type.Count == 1 ? "type" : "types";
                 var messageText = $"{pokemon.Name} has the {typeOrTypes} {string.Join(" and ", pokemon.Type)}. That means it is:\n\n";
 
                 var doubleResistantAgainst = pokemon.MatchupsForType.Where(pair => pair.Value == Constants.Numeric.DOUBLE_RESISTANT).Select(pair => pair.Key);

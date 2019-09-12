@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace PoGoChatbot.Models
@@ -11,7 +12,7 @@ namespace PoGoChatbot.Models
         [JsonProperty("pokemon_id")]
         public string Number { get; set; }
         [JsonProperty("type")]
-        public string[] Type { get; set; } = new string[0];
+        public List<string> Type { get; set; } = new List<string>();
 
         public MatchupsForType MatchupsForType { get; set; }
     }

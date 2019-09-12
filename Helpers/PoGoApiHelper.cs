@@ -44,7 +44,7 @@ namespace PoGoChatbot.Helpers
             return matchedPokemon;
         }
 
-        public static MatchupsForType GetMatchupsForType(string[] pokemonTypes)
+        public static MatchupsForType GetMatchupsForType(List<string> pokemonTypes)
         {
             return pokemonTypes
                 .Select(pokemonType =>
