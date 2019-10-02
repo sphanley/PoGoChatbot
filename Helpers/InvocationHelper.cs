@@ -47,7 +47,7 @@ namespace PoGoChatbot.Helpers
         #region Invocation Handler Methods
         private static async Task HandleBugReportInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            await turnContext.SendActivityAsync(MessageFactory.Text($"To report a simple issue or feature idea, feel free to ping @Sam (sphanley) Valor 39 in the chat. " +
+            await turnContext.SendActivityAsync(MessageFactory.Text($"To report a simple issue or feature idea, feel free to ping @Sam (sphanley) Valor 40 in the chat. " +
                 $"If you're reporting something more complex or lengthy, you can send an email to {Environment.GetEnvironmentVariable("AdminEmailAddress")}, " +
                 $"or if you are a power user and are comfortable opening a GitHub issue, you can do so here: https://github.com/sphanley/PoGoChatbot/issues/new"), cancellationToken);
         }
