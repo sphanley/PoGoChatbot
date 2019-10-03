@@ -5,11 +5,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using GroupMeExtensions.Models;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 using Newtonsoft.Json.Linq;
 using PoGoChatbot.Extensions;
-using PoGoChatbot.Models;
 
 namespace PoGoChatbot.Helpers
 {
@@ -76,7 +76,7 @@ namespace PoGoChatbot.Helpers
             if (!string.IsNullOrEmpty(mapUrl))
             {
                 var messageText = $"Here's a map of the gyms where ";
-                bool argumentIsDifferentGroup = !string.IsNullOrEmpty(normalizedGroupName) && normalizedGroupName != turnContext.Activity.Conversation.Name;
+                bool argumentIsDifferentGroup = !string.IsNullOrEmpty(normalizedGroupName) && normalizedGroupName != VariableResources.GroupName;
                 messageText += argumentIsDifferentGroup ? $"the {normalizedGroupName} group typically raids: " : "we  typically raid: ";
 
                 await turnContext.SendActivityAsync(MessageFactory.Text($"{messageText} {mapUrl}"), cancellationToken);
@@ -152,7 +152,7 @@ namespace PoGoChatbot.Helpers
             }
             else
             {
-                var gymMatches = GymLookupHelper.SearchForGyms(searchTerm, turnContext.Activity.Conversation.Name);
+                var gymMatches = GymLookupHelper.SearchForGyms(searchTerm, VariableResources.GroupName);
                 if (gymMatches.Any())
                 {
                     if (gymMatches.Count > 1)
@@ -162,9 +162,9 @@ namespace PoGoChatbot.Helpers
                     foreach (var gym in gymMatches.Take(3))
                     {
                         var messageText = $"Here's the location of {gym.Name}.";
-                        if (gym.Territory.Any(groupName => !groupName.Equals(turnContext.Activity.Conversation.Name)))
+                        if (gym.Territory.Any(groupName => !groupName.Equals(VariableResources.GroupName)))
                         {
-                            messageText += gym.Territory.Any(name => name.Equals(turnContext.Activity.Conversation.Name)) ?
+                            messageText += gym.Territory.Any(name => name.Equals(VariableResources.GroupName)) ?
                                 " It's " :
                                 " It's outside this group's territory, ";
                             messageText += $"in an area where the {gym.Territory.CommaSeparateWithAnd()} {(gym.Territory.Count() == 1 ? "group raids" : "groups may raid")}.";

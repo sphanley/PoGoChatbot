@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace PoGoChatbot.Models
+namespace GroupMeExtensions.Models
 {
     [Serializable]
     public class GroupMeChannelData
