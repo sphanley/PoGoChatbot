@@ -1,7 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoGoChatbot", "PoGoChatbot.csproj", "{C9C811C2-6111-4525-AF68-BE1F9365F514}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoGoChatbot", "PoGoChatbot\PoGoChatbot.csproj", "{35DA311C-EDAA-4DFA-9CAD-628E75359DCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupMeExtensions", "GroupMeExtensions\GroupMeExtensions.csproj", "{6C0667CB-53D8-4195-9622-A36ED9315928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C9C811C2-6111-4525-AF68-BE1F9365F514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9C811C2-6111-4525-AF68-BE1F9365F514}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9C811C2-6111-4525-AF68-BE1F9365F514}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9C811C2-6111-4525-AF68-BE1F9365F514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35DA311C-EDAA-4DFA-9CAD-628E75359DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35DA311C-EDAA-4DFA-9CAD-628E75359DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35DA311C-EDAA-4DFA-9CAD-628E75359DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35DA311C-EDAA-4DFA-9CAD-628E75359DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C0667CB-53D8-4195-9622-A36ED9315928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C0667CB-53D8-4195-9622-A36ED9315928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C0667CB-53D8-4195-9622-A36ED9315928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C0667CB-53D8-4195-9622-A36ED9315928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
