@@ -8,6 +8,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Bot.Builder" Version="4.5.2" />
+    <PackageReference Include="Microsoft.Bot.Builder" Version="4.5.3" />
   </ItemGroup>
 </Project>
