@@ -4,6 +4,7 @@
         "territory": [
             "University Circle"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.502484",
             "longitude": "-81.605398"
@@ -101,6 +102,7 @@
         "territory": [
             "University Circle"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.506982",
             "longitude": "-81.609463"
@@ -387,6 +389,7 @@
         "territory": [
             "Shaker Heights"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.461266",
             "longitude": "-81.5501042"
@@ -632,6 +635,7 @@
         "territory": [
             "University Circle"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.504233",
             "longitude": "-81.608064"
@@ -699,6 +703,7 @@
         "territory": [
             "University Circle"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.509445",
             "longitude": "-81.607627"
@@ -739,6 +744,7 @@
         "territory": [
             "University Circle"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.503441",
             "longitude": "-81.606916"
@@ -895,6 +901,7 @@
         "territory": [
             "Near East Side"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.5111688",
             "longitude": "-81.577391"
@@ -929,6 +936,7 @@
         "territory": [
             "Shaker Heights"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.4657827",
             "longitude": "-81.5528263"
@@ -1191,6 +1199,7 @@
         "territory": [
             "Near East Side"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.5143329",
             "longitude": "-81.5713379"
