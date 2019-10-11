@@ -26,6 +26,7 @@
         "territory": [
             "University Circle"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.506977",
             "longitude": "-81.606475"
