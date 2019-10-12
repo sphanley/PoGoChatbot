@@ -24,11 +24,11 @@ namespace PoGoChatbot
             switch (groupName)
             {
                 case "Near East Side":
-                    return "https://bit.ly/nesraidmap";
+                    return "https://prf.sr/nesraidmap";
                 case "University Circle":
-                    return "https://bit.ly/ucraidmap";
+                    return "https://prf.sr/ucraidmap";
                 case "Shaker Heights":
-                    return "https://bit.ly/shakerheightsraidmap";
+                    return "https://prf.sr/shakerraidmap";
                 default:
                     return string.Empty;
             }
@@ -39,11 +39,11 @@ namespace PoGoChatbot
             switch (GroupName)
             {
                 case "Near East Side":
-                    return "https://bit.ly/nespogoinfo";
+                    return "https://prf.sr/nespogoinfo";
                 case "University Circle":
-                    return "https://bit.ly/ucpogoinfo";
+                    return "https://prf.sr/ucpogoinfo";
                 case "Shaker Heights":
-                    return "https://bit.ly/shakerheightspogoinfo";
+                    return "https://prf.sr/shakerpogoinfo";
                 default:
                     return string.Empty;
             }
