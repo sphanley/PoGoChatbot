@@ -572,6 +572,7 @@
             "Near East Side",
             "Shaker Heights"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.4906796",
             "longitude": "-81.5821296"
@@ -648,6 +649,7 @@
             "Near East Side",
             "Shaker Heights"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.4850939",
             "longitude": "-81.5736153"
@@ -835,6 +837,7 @@
             "Near East Side",
             "Shaker Heights"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.4879024",
             "longitude": "-81.5812878"
@@ -1099,6 +1102,7 @@
             "Near East Side",
             "Shaker Heights"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.482601",
             "longitude": "-81.5582007"
