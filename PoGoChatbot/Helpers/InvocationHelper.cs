@@ -153,14 +153,14 @@ namespace PoGoChatbot.Helpers
             }
             else
             {
-                var gymMatches = GymApi.SearchForGyms(searchTerm, VariableResources.GroupName);
+                var gymMatches = GymApi.GetGyms(searchTerm, VariableResources.GroupName, 3);
                 if (gymMatches.Any())
                 {
                     if (gymMatches.Count > 1)
                     {
                         await turnContext.SendActivityAsync(MessageFactory.Text($"I found more than one gym with names similar to \"{searchTerm}\":"), cancellationToken);
                     }
-                    foreach (var gym in gymMatches.Take(3))
+                    foreach (var gym in gymMatches)
                     {
                         var messageText = $"Here's the location of {gym.Name}.";
                         if (gym.Territory.Any(groupName => !groupName.Equals(VariableResources.GroupName)))

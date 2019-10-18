@@ -13,7 +13,7 @@ namespace PoGoChatbot.Services
     {
         private static List<Gym> gyms;
 
-        public static List<Gym> SearchForGyms(string searchTerm, string groupName)
+        public static List<Gym> GetGyms(string searchTerm, string groupName, int? maximum = null)
         {
             if (gyms == null || !gyms.Any())
             {
@@ -42,6 +42,8 @@ namespace PoGoChatbot.Services
 
             // If all else has failed, return any approximate matches, regardless of group territory
             matches = FindNameOrAliasApproximation(searchTerm);
+
+            if (maximum != null) matches = matches.Take(maximum.Value);
             return matches.ToList();
         }
 
