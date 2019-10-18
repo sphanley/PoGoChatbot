@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using DuoVia.FuzzyStrings;
 using Newtonsoft.Json;
 using PoGoChatbot.Models;
@@ -56,54 +55,38 @@ namespace PoGoChatbot.Services
                 var levenshtienDistance = Math.Min(maxLevenshteinDistance, (gym.Name.Length / 2)-1);
 
                 if (gym.Name.LevenshteinDistance(searchTerm) <= levenshtienDistance) return true;
-                if (shouldSearchAliases && gym.Aliases.Any(alias => alias.ToLowerInvariant() == searchTerm)) return true;
+                if (shouldSearchAliases && gym.Aliases.Any(alias => alias.Equals(searchTerm, StringComparison.InvariantCultureIgnoreCase))) return true;
                 return false;
             });
 
-            if (!string.IsNullOrEmpty(groupName))
-            {
-                matches = matches.Where(gym => gym.Territory.Contains(groupName));
-            }
+            if (!string.IsNullOrEmpty(groupName)) matches = matches.Where(gym => gym.Territory.Contains(groupName));
 
             return matches;
         }
 
         private static IEnumerable<Gym> FindNameOrAliasApproximation(string searchTerm, string groupName = null)
         {
-            var normalizedSearchTerm = NormalizeStringForGymSearch(searchTerm);
-            var wordsInSearchTerm = normalizedSearchTerm.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            var wordsInSearchTerm = SplitIntoWords(searchTerm);
 
             var candidates = gyms.Where(gym =>
-            {
-                var normalizedGymName = NormalizeStringForGymSearch(gym.Name);
-                var wordsInGymName = normalizedGymName.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-               
-                if (wordsInGymName.IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm)) return true;
+                SplitIntoWords(gym.Name).IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm) ||
+                gym.Aliases.Any(alias => SplitIntoWords(alias).IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm))
+            );
 
-                foreach (var alias in gym.Aliases)
-                {
-                    var wordsInAlias = NormalizeStringForGymSearch(alias).Split(" ", StringSplitOptions.RemoveEmptyEntries);
-                    if (wordsInAlias.IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm)) return true;
-                }
-
-                return false;
-            });
-
-            if (!string.IsNullOrEmpty(groupName))
-            {
-                candidates = candidates.Where(c => c.Territory.Contains(groupName));
-            }
+            if (!string.IsNullOrEmpty(groupName)) candidates = candidates.Where(c => c.Territory.Contains(groupName));
 
             return candidates;
         }
 
-        private static string NormalizeStringForGymSearch(string input)
+        private static IList<string> SplitIntoWords(string input)
         {
-            var punctuationRegex = new Regex("\\p{P}+");
-            return punctuationRegex.Replace(input.ToLowerInvariant().Replace("-", " "), string.Empty);
+            return input.Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                        .Select(s => s.Split("-"))
+                        .SelectMany(s => s)
+                        .ToList();
         }
 
-        private static bool IsPosessivenessAgnosticSupersetOf(this IEnumerable<string> superset, IEnumerable<string> subset)
+        private static bool IsPosessivenessAgnosticSupersetOf(this IList<string> superset, IList<string> subset)
         {
             var permutations = superset.ToList();
             // For each word, create a posessive form permutation with a trailing "s",

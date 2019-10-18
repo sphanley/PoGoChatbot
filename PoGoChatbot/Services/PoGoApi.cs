@@ -19,11 +19,10 @@ namespace PoGoChatbot.Services
             if (!pokemonList.Any()) pokemonList = await LoadDataFromApi<List<Pokemon>>("/api/v1/pokemon_types.json");
             if (!typeMatchupList.Any()) typeMatchupList = await LoadDataFromApi<TypeMatchupList>("/api/v1/type_effectiveness.json");
 
-            var matchedPokemon = pokemonList
-                .FirstOrDefault(pokemon =>
-                    (pokemon.Name?.Equals(searchTerm, StringComparison.InvariantCultureIgnoreCase) ?? false) ||
-                    (pokemon.Number?.TrimStart('0').Equals(searchTerm.TrimStart('0'), StringComparison.InvariantCultureIgnoreCase) ?? false)
-                );
+            var matchedPokemon = pokemonList.FirstOrDefault(pokemon =>
+                (pokemon.Name?.Equals(searchTerm, StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                (pokemon.Number?.TrimStart('0').Equals(searchTerm.TrimStart('0'), StringComparison.InvariantCultureIgnoreCase) ?? false)
+            );
 
             if (matchedPokemon != null)
             {
@@ -49,17 +48,16 @@ namespace PoGoChatbot.Services
             return pokemonTypes
                 .Select(pokemonType =>
                 {
-                    var properties = typeof(MatchupsForType).GetProperties();
                     var matchupsForType = new MatchupsForType();
 
-                    typeMatchupList.ToList()
-                        .ForEach(matchup =>
-                        {
-                            matchupsForType[matchup.Key] = matchup.Value.First(row => row.Key == pokemonType).Value;
-                        });
-    
+                    foreach (var matchup in typeMatchupList)
+                    {
+                        matchupsForType[matchup.Key] = matchup.Value.First(row => row.Key == pokemonType).Value;
+                    }
+
                     return matchupsForType;
-                }).Aggregate((a, b) => a * b);
+                })
+                .Aggregate((a, b) => a * b);
         }
     }
 }
