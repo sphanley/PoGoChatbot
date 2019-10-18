@@ -10,6 +10,7 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 using Newtonsoft.Json.Linq;
 using PoGoChatbot.Extensions;
+using PoGoChatbot.Services;
 
 namespace PoGoChatbot.Helpers
 {
@@ -91,7 +92,7 @@ namespace PoGoChatbot.Helpers
         {
             await turnContext.SendActivityAsync(MessageFactory.Text(Constants.RaidBossesMessage), cancellationToken);
 
-            var tierFiveRaids = await PokeBattlerApiHelper.GetRaids(tier: 5);
+            var tierFiveRaids = await PokeBattlerApi.GetRaids(tier: 5);
             if (tierFiveRaids.All(raid => !string.IsNullOrEmpty(raid.Article?.InfographicURL)))
             {
                 bool pluralize = tierFiveRaids.Count() > 1;
@@ -114,7 +115,7 @@ namespace PoGoChatbot.Helpers
             Match typeLookupMatch = typeLookupRegex.Match(turnContext.Activity.Text);
             var searchTerm = (typeLookupMatch.Success && typeLookupMatch.Groups.Count >= 2) ? typeLookupMatch.Groups[1].Value : "";
 
-            var pokemon = await PoGoApiHelper.GetPokemonType(searchTerm);
+            var pokemon = await PoGoApi.GetPokemon(searchTerm);
             if (pokemon != null)
             {
                 var typeOrTypes = pokemon.Type.Count == 1 ? "type" : "types";
@@ -152,7 +153,7 @@ namespace PoGoChatbot.Helpers
             }
             else
             {
-                var gymMatches = GymLookupHelper.SearchForGyms(searchTerm, VariableResources.GroupName);
+                var gymMatches = GymApi.SearchForGyms(searchTerm, VariableResources.GroupName);
                 if (gymMatches.Any())
                 {
                     if (gymMatches.Count > 1)

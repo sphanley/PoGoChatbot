@@ -6,26 +6,15 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using PoGoChatbot.Models;
 
-namespace PoGoChatbot.Helpers
+namespace PoGoChatbot.Services
 {
-    public static class PoGoApiHelper
+    public static class PoGoApi
     {
         private static readonly HttpClient poGoApiClient = new HttpClient { BaseAddress = new Uri("https://pogoapi.net/") };
         private static List<Pokemon> pokemonList = new List<Pokemon>();
         private static TypeMatchupList typeMatchupList = new TypeMatchupList();
 
-        private static async Task<T> LoadDataFromApi<T>(string route)
-        {
-            var response = await poGoApiClient.GetAsync(route);
-            if (response != null && response.IsSuccessStatusCode)
-            {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(jsonString);
-            }
-            return default(T);
-        }
-
-        public static async Task<Pokemon> GetPokemonType(string searchTerm)
+        public static async Task<Pokemon> GetPokemon(string searchTerm)
         {
             if (!pokemonList.Any()) pokemonList = await LoadDataFromApi<List<Pokemon>>("/api/v1/pokemon_types.json");
             if (!typeMatchupList.Any()) typeMatchupList = await LoadDataFromApi<TypeMatchupList>("/api/v1/type_effectiveness.json");
@@ -44,7 +33,18 @@ namespace PoGoChatbot.Helpers
             return matchedPokemon;
         }
 
-        public static MatchupsForType GetMatchupsForType(List<string> pokemonTypes)
+        private static async Task<T> LoadDataFromApi<T>(string route)
+        {
+            var response = await poGoApiClient.GetAsync(route);
+            if (response != null && response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(jsonString);
+            }
+            return default(T);
+        }
+
+        private static MatchupsForType GetMatchupsForType(List<string> pokemonTypes)
         {
             return pokemonTypes
                 .Select(pokemonType =>

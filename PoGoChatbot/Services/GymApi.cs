@@ -7,9 +7,9 @@ using DuoVia.FuzzyStrings;
 using Newtonsoft.Json;
 using PoGoChatbot.Models;
 
-namespace PoGoChatbot.Helpers
+namespace PoGoChatbot.Services
 {
-    public static class GymLookupHelper
+    public static class GymApi
     {
         private static List<Gym> gyms;
 

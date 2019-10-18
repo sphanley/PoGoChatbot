@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using PoGoChatbot.Models;
 
-namespace PoGoChatbot.Helpers
+namespace PoGoChatbot.Services
 {
-    public static class PokeBattlerApiHelper
+    public static class PokeBattlerApi
     {
         private static readonly HttpClient pokeBattlerApi = new HttpClient { BaseAddress = new Uri("https://fight.pokebattler.com/") };
         private static RaidList raidList = new RaidList();
