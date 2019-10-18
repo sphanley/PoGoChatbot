@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace PoGoChatbot.Models
 {
+    [Serializable]
     public class Gym
     {
         [JsonProperty("name")]

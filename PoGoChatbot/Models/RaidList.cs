@@ -1,14 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace PoGoChatbot.Models
 {
+    [Serializable]
     public class RaidList
     {
         [JsonProperty("tiers")]
         public List<RaidTier> Tiers { get; set; } = new List<RaidTier>();
     }
 
+    [Serializable]
     public class TierInfo
     {
         [JsonProperty("hp")]
@@ -29,6 +32,7 @@ namespace PoGoChatbot.Models
         public double StaminaMultiplier { get; set; }
     }
 
+    [Serializable]
     public class RaidTier
     {
         [JsonProperty("type")]
@@ -49,6 +53,7 @@ namespace PoGoChatbot.Models
         public string RaidType { get; set; }
     }
 
+    [Serializable]
     public class Article
     {
         [JsonProperty("id")]
@@ -77,6 +82,7 @@ namespace PoGoChatbot.Models
         public string VideoId { get; set; }
     }
 
+    [Serializable]
     public class Raid
     {
         [JsonProperty("id")]
