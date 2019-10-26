@@ -16,7 +16,7 @@ namespace PoGoChatbot.Helpers
                     MessageFactory.Text($"Welcome, {member.Name}! We're always excited to have a new trainer join our community! Our group guidelines and FAQs can be found here: {VariableResources.WelcomePacketUrl}"),
                     MessageFactory.Text(Constants.WelcomeMessages.FirstTimeNameFormatMessage),
                     MessageFactory.Text(string.Format(Constants.WelcomeMessages.ParameterizedFirstTimeBotTutorialMessage, VariableResources.GymNameExamples.First()))
-                }, cancellationToken); ;
+                }, cancellationToken);
             }
         }
 
