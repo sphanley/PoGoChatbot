@@ -214,6 +214,16 @@
         }
     },
     {
+        "name": "Cleveland Heights Historical Schoolhouse",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5094061",
+            "longitude": "-81.5688236"
+        }
+    },
+    {
         "name": "Cleveland Institute of Music",
         "aliases": [
             "CIM"
