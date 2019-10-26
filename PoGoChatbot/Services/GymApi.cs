@@ -66,11 +66,11 @@ namespace PoGoChatbot.Services
 
         private static IEnumerable<Gym> FindNameOrAliasApproximation(string searchTerm, string groupName = null)
         {
-            var wordsInSearchTerm = SplitIntoWords(searchTerm);
+            var wordsInSearchTerm = SplitIntoWords(searchTerm.ToLowerInvariant());
 
             var candidates = gyms.Where(gym =>
-                SplitIntoWords(gym.Name).IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm) ||
-                gym.Aliases.Any(alias => SplitIntoWords(alias).IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm))
+                SplitIntoWords(gym.Name.ToLowerInvariant()).IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm) ||
+                gym.Aliases.Any(alias => SplitIntoWords(alias.ToLowerInvariant()).IsPosessivenessAgnosticSupersetOf(wordsInSearchTerm))
             );
 
             if (!string.IsNullOrEmpty(groupName)) candidates = candidates.Where(c => c.Territory.Contains(groupName));
