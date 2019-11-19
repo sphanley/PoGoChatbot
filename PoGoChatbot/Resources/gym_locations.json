@@ -204,6 +204,16 @@
         }
     },
     {
+        "name": "Church of the Savior",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4906064",
+            "longitude": "-81.5647738"
+        }
+    },
+    {
         "name": "Cleveland Heights-University Heights Public Library",
         "territory": [
             "Near East Side"
@@ -922,17 +932,6 @@
         }
     },
     {
-        "name": "Sprint Store",
-        "territory": [
-            "Near East Side"
-        ],
-        "is_ex_eligible": true,
-        "location": {
-            "latitude": "41.5022908",
-            "longitude": "-81.5384437"
-        }
-    },
-    {
         "name": "St Ann's Church",
         "territory": [
             "Near East Side"
@@ -1228,6 +1227,16 @@
         "location": {
             "latitude": "41.509013",
             "longitude": "-81.5385851"
+        }
+    },
+    {
+        "name": "Walter Stinson Community Park",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.49691",
+            "longitude": "-81.5411975"
         }
     },
     {
