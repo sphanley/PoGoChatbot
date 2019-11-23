@@ -342,6 +342,16 @@
         }
     },
     {
+        "name": "First Unitarian Church of Cleveland",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.477391",
+            "longitude": "-81.527482"
+        }
+    },
+    {
         "name": "Flukes",
         "territory": [
             "University Circle"
