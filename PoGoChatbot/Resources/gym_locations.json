@@ -991,6 +991,20 @@
         }
     },
     {
+        "name": "Sts. Constantine and Helen Greek Orthodox Cathedral",
+        "aliases": [
+            "Greek Church",
+            "Saints Constantine and Helen Greek Orthodox Cathedral"
+        ],
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5190963",
+            "longitude": "-81.5595578"
+        }
+    },
+    {
         "name": "Starbucks",
         "territory": [
             "Near East Side"
