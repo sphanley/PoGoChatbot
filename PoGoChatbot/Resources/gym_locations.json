@@ -33,6 +33,16 @@
         }
     },
     {
+        "name": "4 Portal Steeple",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5192722",
+            "longitude": "-81.4988167"
+        }
+    },
+    {
         "name": "A.D. 1950 Heights Branch YMCA",
         "aliases": [
             "Dobama"
@@ -46,6 +56,39 @@
         }
     },
     {
+        "name": "Abundant Life International",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5384875",
+            "longitude": "-81.465275"
+        }
+    },
+    {
+        "name": "Acacia Gazebo",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5018787",
+            "longitude": "-81.4898786"
+        }
+    },
+    {
+        "name": "Acacia Reservation",
+        "aliases": [
+            "WTA"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5012291",
+            "longitude": "-81.4978622"
+        }
+    },
+    {
         "name": "Alta House",
         "territory": [
             "University Circle"
@@ -53,6 +96,49 @@
         "location": {
             "latitude": "41.50855",
             "longitude": "-81.59598"
+        }
+    },
+    {
+        "name": "Aluminum & Stainless Steel Obelisk",
+        "aliases": [
+            "Aluminum and Stainless Steel Obelisk"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5359019",
+            "longitude": "-81.4510402"
+        }
+    },
+    {
+        "name": "Anderson Fields",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.534599",
+            "longitude": "-81.5029969"
+        }
+    },
+    {
+        "name": "Arbor Court Clubhouse",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5237207",
+            "longitude": "-81.4419026"
+        }
+    },
+    {
+        "name": "Armillary Sphere",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.523744",
+            "longitude": "-81.488749"
         }
     },
     {
@@ -66,6 +152,19 @@
         }
     },
     {
+        "name": "Baseball Field #2",
+        "aliases": [
+            "Baseball Field Two"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5297521",
+            "longitude": "-81.4937564"
+        }
+    },
+    {
         "name": "Batter Up",
         "territory": [
             "University Circle"
@@ -76,13 +175,23 @@
         }
     },
     {
-        "name": "Shaker Heights Library Bertram Branch",
+        "name": "Beachwood Place Clock",
         "territory": [
-            "Shaker Heights"
+            "NEO"
         ],
         "location": {
-            "latitude": "41.4764016",
-            "longitude": "-81.5351963"
+            "latitude": "41.4984117",
+            "longitude": "-81.494153"
+        }
+    },
+    {
+        "name": "Bilson",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5415394",
+            "longitude": "-81.4119084"
         }
     },
     {
@@ -107,6 +216,26 @@
         "location": {
             "latitude": "41.506982",
             "longitude": "-81.609463"
+        }
+    },
+    {
+        "name": "Brainard Park",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5096168",
+            "longitude": "-81.4782783"
+        }
+    },
+    {
+        "name": "Brainard Splash Park",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5096168",
+            "longitude": "-81.4782783"
         }
     },
     {
@@ -289,6 +418,27 @@
         }
     },
     {
+        "name": "Desan Park",
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5507576",
+            "longitude": "-81.5096507"
+        }
+    },
+    {
+        "name": "Diner Building",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5058272",
+            "longitude": "-81.4671083"
+        }
+    },
+    {
         "name": "Disciples Christian Church",
         "territory": [
             "Near East Side"
@@ -382,6 +532,16 @@
         }
     },
     {
+        "name": "Ferrara’s Imported Foods",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5195457",
+            "longitude": "-81.4721291"
+        }
+    },
+    {
         "name": "Flukes",
         "territory": [
             "University Circle"
@@ -426,6 +586,16 @@
         }
     },
     {
+        "name": "Gates Mills Post Office",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5194148",
+            "longitude": "-81.4051029"
+        }
+    },
+    {
         "name": "Getting Gas in The 20’s",
         "territory": [
             "University Circle"
@@ -436,6 +606,16 @@
         }
     },
     {
+        "name": "Gilmour Academy Ice Rink #1",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5046409",
+            "longitude": "-81.4383127"
+        }
+    },
+    {
         "name": "Gimme Java Coffee",
         "territory": [
             "Shaker Heights"
@@ -443,6 +623,16 @@
         "location": {
             "latitude": "41.466308",
             "longitude": "-81.5648362"
+        }
+    },
+    {
+        "name": "God's Serenity Garden",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5300282",
+            "longitude": "-81.495386"
         }
     },
     {
@@ -463,6 +653,16 @@
         "location": {
             "latitude": "41.486316",
             "longitude": "-81.543816"
+        }
+    },
+    {
+        "name": "Grace Tabernacle",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5192722",
+            "longitude": "-81.4988167"
         }
     },
     {
@@ -508,6 +708,26 @@
         }
     },
     {
+        "name": "H.G. LX",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5359019",
+            "longitude": "-81.4510402"
+        }
+    },
+    {
+        "name": "Hamilton House Pool",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5287753",
+            "longitude": "-81.4332933"
+        }
+    },
+    {
         "name": "Harrison Dillard Sculpture",
         "territory": [
             "University Circle"
@@ -515,6 +735,16 @@
         "location": {
             "latitude": "41.50173",
             "longitude": "-81.6084"
+        }
+    },
+    {
+        "name": "He Will Eat for a Lifetime-Guitar",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5204003",
+            "longitude": "-81.5295775"
         }
     },
     {
@@ -551,6 +781,47 @@
         }
     },
     {
+        "name": "Highland Center Mascot",
+        "aliases": [
+            "Bigfoot"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5379859",
+            "longitude": "-81.468225"
+        }
+    },
+    {
+        "name": "Highland Heights Community Park",
+        "aliases": [
+            "HH Park"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5407123",
+            "longitude": "-81.4663651"
+        }
+    },
+    {
+        "name": "Highland Heights Community Pool",
+        "aliases": [
+            "HH Pool"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5407123",
+            "longitude": "-81.4663651"
+        }
+    },
+    {
         "name": "Highland Park Cemetery, Chagrin",
         "aliases": [
             "HPC"
@@ -578,6 +849,32 @@
         }
     },
     {
+        "name": "Hillcrest Community Playground",
+        "aliases": [
+            "HCP"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5311069",
+            "longitude": "-81.4765144"
+        }
+    },
+    {
+        "name": "Historical Society Bell",
+        "aliases": [
+            "MFV Bell"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5391974",
+            "longitude": "-81.4436436"
+        }
+    },
+    {
         "name": "Hot Sauce Williams",
         "territory": [
             "Shaker Heights"
@@ -585,6 +882,16 @@
         "location": {
             "latitude": "41.4569963",
             "longitude": "-81.5650912"
+        }
+    },
+    {
+        "name": "Imaginetic",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.4984699",
+            "longitude": "-81.4948772"
         }
     },
     {
@@ -651,6 +958,39 @@
         }
     },
     {
+        "name": "Leader in the Education of Women",
+        "aliases": [
+            "Ursuline"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.4965154",
+            "longitude": "-81.4656522"
+        }
+    },
+    {
+        "name": "Legacy Bike Rack",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.502969",
+            "longitude": "-81.5029442"
+        }
+    },
+    {
+        "name": "Legacy Village Overlook Park",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5035074",
+            "longitude": "-81.5057766"
+        }
+    },
+    {
         "name": "Little Italy",
         "territory": [
             "University Circle"
@@ -693,6 +1033,44 @@
         }
     },
     {
+        "name": "Lyndhurst Gazebo",
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5203459",
+            "longitude": "-81.4879691"
+        }
+    },
+    {
+        "name": "Lyndhurst Masonic Temple",
+        "aliases": [
+            "LMT"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5195163",
+            "longitude": "-81.4811878"
+        }
+    },
+    {
+        "name": "Lyndhurst Municipal Center",
+        "aliases": [
+            "LMC",
+            "Lyndhurst Park"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5203459",
+            "longitude": "-81.4879691"
+        }
+    },
+    {
         "name": "Magnolia Historical District",
         "territory": [
             "University Circle"
@@ -714,6 +1092,111 @@
         }
     },
     {
+        "name": "Mayfield City Park Gazebo",
+        "aliases": [
+            "MCPG",
+            "Hex"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5186596",
+            "longitude": "-81.4573907"
+        }
+    },
+    {
+        "name": "Mayfield Community Center",
+        "aliases": [
+            "MCC",
+            "Hex"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.514204",
+            "longitude": "-81.4524146"
+        }
+    },
+    {
+        "name": "Mayfield Guitar",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5201754",
+            "longitude": "-81.5197247"
+        }
+    },
+    {
+        "name": "Mayfield Heights City Hall",
+        "aliases": [
+            "MHPD",
+            "Hex"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5196693",
+            "longitude": "-81.4580799"
+        }
+    },
+    {
+        "name": "Mayfield Heights Gazebo",
+        "aliases": [
+            "MHG"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.52588",
+            "longitude": "-81.43703"
+        }
+    },
+    {
+        "name": "Mayfield Hts Recreational Park",
+        "aliases": [
+            "Mayfield Heights Recreational Park",
+            "MHRP",
+            "Hex"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.514204",
+            "longitude": "-81.4524146"
+        }
+    },
+    {
+        "name": "Mayfield Village Baptist Church",
+        "aliases": [
+            "MV Baptist Church"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5513364",
+            "longitude": "-81.4440704"
+        }
+    },
+    {
+        "name": "Mayfield Village Gazebo",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5395712",
+            "longitude": "-81.4401676"
+        }
+    },
+    {
         "name": "Memorial Dave Black",
         "territory": [
             "Near East Side"
@@ -722,6 +1205,20 @@
         "location": {
             "latitude": "41.5270392",
             "longitude": "-81.5746315"
+        }
+    },
+    {
+        "name": "Memorial Statue #4",
+        "aliases": [
+            "Sacred Heart"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5186858",
+            "longitude": "-81.5174276"
         }
     },
     {
@@ -735,6 +1232,26 @@
         }
     },
     {
+        "name": "Messiah Lutheran Church",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.519182",
+            "longitude": "-81.492157"
+        }
+    },
+    {
+        "name": "Miss Cornelia Schnurmann",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5265647",
+            "longitude": "-81.4363097"
+        }
+    },
+    {
         "name": "MLK Gazebo",
         "territory": [
             "University Circle"
@@ -742,6 +1259,16 @@
         "location": {
             "latitude": "41.5137356",
             "longitude": "-81.6184752"
+        }
+    },
+    {
+        "name": "Monticello Gospel Hall",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5385271",
+            "longitude": "-81.4981306"
         }
     },
     {
@@ -779,6 +1306,16 @@
         }
     },
     {
+        "name": "Mt Sinai Cemetery",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.569096",
+            "longitude": "-81.440501"
+        }
+    },
+    {
         "name": "Nature Center",
         "territory": [
             "Near East Side",
@@ -791,14 +1328,14 @@
         }
     },
     {
-        "name": "New Song Church",
-        "description": "Please note that New Song churchgoers have politely asked members of our community to avoid gathering here, as it has made their congregants feel uncomfortable. As such, community policy is to avoid raiding at New Song.",
+        "name": "New Hope Ministries",
         "territory": [
-
+            "Near East Side",
+            "Shaker Heights"
         ],
         "location": {
-            "latitude": "41.5137857",
-            "longitude": "-81.5538883"
+            "latitude": "41.5210974",
+            "longitude": "-81.4628725"
         }
     },
     {
@@ -847,6 +1384,16 @@
         }
     },
     {
+        "name": "Oakville Elementary",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.526279",
+            "longitude": "-81.4673771"
+        }
+    },
+    {
         "name": "Oeccan",
         "territory": [
             "University Circle"
@@ -858,6 +1405,54 @@
         }
     },
     {
+        "name": "Pavilion B",
+        "aliases": [
+            "Hex"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5186596",
+            "longitude": "-81.4573907"
+        }
+    },
+    {
+        "name": "Pepperwood Gazebo",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.521509",
+            "longitude": "-81.450802"
+        }
+    },
+    {
+        "name": "Pet Cemetery",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5398134",
+            "longitude": "-81.472021"
+        }
+    },
+    {
+        "name": "Picnic Shelter",
+        "aliases": [
+            "Lyndhurst Park"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.523744",
+            "longitude": "-81.488749"
+        }
+    },
+    {
         "name": "Picnic Shelter 1",
         "territory": [
             "Near East Side"
@@ -865,6 +1460,19 @@
         "location": {
             "latitude": "41.5198621",
             "longitude": "-81.572004"
+        }
+    },
+    {
+        "name": "Play Arcade & Kitchen",
+        "aliases": [
+            "Play Arcade and Kitchen"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5194341",
+            "longitude": "-81.466356"
         }
     },
     {
@@ -919,6 +1527,49 @@
         }
     },
     {
+        "name": "Scenic Observation Deck",
+        "aliases": [
+            "SOD"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5058272",
+            "longitude": "-81.4671083"
+        }
+    },
+    {
+        "name": "Scenic Observation Deck",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5058272",
+            "longitude": "-81.4671083"
+        }
+    },
+    {
+        "name": "Schaefer Field",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5298713",
+            "longitude": "-81.5052917"
+        }
+    },
+    {
+        "name": "Schaefer Park",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5298713",
+            "longitude": "-81.5052917"
+        }
+    },
+    {
         "name": "Seedling Sculptures",
         "aliases": [
             "Seeds"
@@ -930,20 +1581,6 @@
         "location": {
             "latitude": "41.510461",
             "longitude": "-81.610353"
-        }
-    },
-    {
-        "name": "Somerset, Farnsleigh, Belvoir Triangle Park",
-        "aliases": [
-            "SFB Triangle Park"
-        ],
-        "territory": [
-            "Shaker Heights"
-        ],
-        "is_ex_eligible": true,
-        "location": {
-            "latitude": "41.4675439",
-            "longitude": "-81.565597"
         }
     },
     {
@@ -994,6 +1631,16 @@
         }
     },
     {
+        "name": "Shaker Heights Library Bertram Branch",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4764016",
+            "longitude": "-81.5351963"
+        }
+    },
+    {
         "name": "Shaker Heights Public Library",
         "territory": [
             "Shaker Heights"
@@ -1041,6 +1688,43 @@
         }
     },
     {
+        "name": "Somerset, Farnsleigh, Belvoir Triangle Park",
+        "aliases": [
+            "SFB Triangle Park"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.4675439",
+            "longitude": "-81.565597"
+        }
+    },
+    {
+        "name": "South Euclid Community Center",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5226071",
+            "longitude": "-81.5213268"
+        }
+    },
+    {
+        "name": "South Euclid Historical Society",
+        "aliases": [
+            "Bob's House"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5201284",
+            "longitude": "-81.5125915"
+        }
+    },
+    {
         "name": "Southerly Park",
         "territory": [
             "Shaker Heights"
@@ -1085,6 +1769,9 @@
     },
     {
         "name": "St Ann's Church",
+        "aliases": [
+            "Saint Ann's Church"
+        ],
         "territory": [
             "Near East Side"
         ],
@@ -1094,17 +1781,18 @@
         }
     },
     {
-        "name": "St Peter's Lutheran Church",
-        "aliases": [
-            "Saint Peter's Lutheran Church"
+        "name": "St Bartholomew Church Sign",
+        "aliases":[
+            "Saint Bartholomew Church Sign",
+            "St Bart's",
+            "Saint Bart's"
         ],
         "territory": [
-            "Shaker Heights"
+            "NEO"
         ],
-        "is_ex_eligible": true,
         "location": {
-            "latitude": "41.4657827",
-            "longitude": "-81.5528263"
+            "latitude": "41.5396546",
+            "longitude": "-81.4376734"
         }
     },
     {
@@ -1123,13 +1811,86 @@
         }
     },
     {
+        "name": "St Francis of Assisi",
+        "aliases": [
+            "Saint Francis of Assisi"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5187979",
+            "longitude": "-81.430915"
+        }
+    },
+    {
+        "name": "St Gregory of Narek Armenian",
+        "aliases": [
+            "St Greg's",
+            "Saint Greg's",
+            "Saint Gregory of Narek Armenian"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5428931",
+            "longitude": "-81.4979781"
+        }
+    },
+    {
+        "name": "St John’s Lutheran Cleveland on Ford",
+        "aliases": [
+            "St Ford"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5333848",
+            "longitude": "-81.4802999"
+        }
+    },
+    {
         "name": "St Mark's Presbyterian Church",
+        "aliases": [
+            "Saint Mark's Presbyterian Church"
+        ],
         "territory": [
             "Shaker Heights"
         ],
         "location": {
             "latitude": "41.465358",
             "longitude": "-81.5234642"
+        }
+    },
+    {
+        "name": "St Paschal Baylon",
+        "aliases": [
+            "Saint Paschal Baylon",
+            "St Paschal's",
+            "Saint Paschal's"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5380568",
+            "longitude": "-81.4854872"
+        }
+    },
+    {
+        "name": "St Peter's Lutheran Church",
+        "aliases": [
+            "Saint Peter's Lutheran Church"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.4657827",
+            "longitude": "-81.5528263"
         }
     },
     {
@@ -1155,6 +1916,20 @@
         "location": {
             "latitude": "41.5017525",
             "longitude": "-81.5383793"
+        }
+    },
+    {
+        "name": "Starbucks",
+        "aliases":[
+            "Maybucks"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.520857",
+            "longitude": "-81.439154"
         }
     },
     {
@@ -1209,6 +1984,26 @@
         "location": {
             "latitude": "41.5009563",
             "longitude": "-81.6005917"
+        }
+    },
+    {
+        "name": "The Fountain at Legacy Village",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5027681",
+            "longitude": "-81.5018713"
+        }
+    },
+    {
+        "name": "The Grove",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5615086",
+            "longitude": "-81.4407426"
         }
     },
     {
@@ -1344,7 +2139,6 @@
         "territory": [
             "Near East Side"
         ],
-        "is_ex_eligible": false,
         "location": {
             "latitude": "41.5002691",
             "longitude": "-81.5270258"
@@ -1355,10 +2149,19 @@
         "territory": [
             "Near East Side"
         ],
-        "is_ex_eligible": false,
         "location": {
             "latitude": "41.501182",
             "longitude": "-81.5360726"
+        }
+    },
+    {
+        "name": "Ursuline Chapel",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.4965154",
+            "longitude": "-81.4656522"
         }
     },
     {
@@ -1372,6 +2175,19 @@
         }
     },
     {
+        "name": "US Post Office, S Green Road",
+        "aliases": [
+            "US Post Office, South Green Road"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.517249",
+            "longitude": "-81.5195309"
+        }
+    },
+    {
         "name": "Uqbah Mosque Foundation",
         "territory": [
             "University Circle"
@@ -1379,6 +2195,16 @@
         "location": {
             "latitude": "41.498191",
             "longitude": "-81.609389"
+        }
+    },
+    {
+        "name": "Veterans Memorial",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.512817",
+            "longitude": "-81.444307"
         }
     },
     {
@@ -1437,6 +2263,19 @@
         }
     },
     {
+        "name": "War Memorial Mayfield Hts",
+        "aliases": [
+            "Hex"
+        ],
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5196693",
+            "longitude": "-81.4580799"
+        }
+    },
+    {
         "name": "Warrensville Rapid Station",
         "territory": [
             "Shaker Heights"
@@ -1444,6 +2283,57 @@
         "location": {
             "latitude": "41.465946",
             "longitude": "-81.5378069"
+        }
+    },
+    {
+        "name": "Waterfall Mural Box",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5202898",
+            "longitude": "-81.4390575"
+        }
+    },
+    {
+        "name": "West Brainard Park Field",
+        "territory": [
+            "NEO"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.5096168",
+            "longitude": "-81.4782783"
+        }
+    },
+    {
+        "name": "Wildlife Goddess Sculpture",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5404225",
+            "longitude": "-81.4461757"
+        }
+    },
+    {
+        "name": "Wiley Park",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5487549",
+            "longitude": "-81.4400773"
+        }
+    },
+    {
+        "name": "Willson",
+        "territory": [
+            "NEO"
+        ],
+        "location": {
+            "latitude": "41.5415394",
+            "longitude": "-81.4119084"
         }
     },
     {
