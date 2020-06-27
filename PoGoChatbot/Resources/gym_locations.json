@@ -268,6 +268,16 @@
         }
     },
     {
+        "name": "Cumberland Park",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.511574",
+            "longitude": "-81.5595578"
+        }
+    },
+    {
         "name": "Cumberland Pool",
         "territory": [
             "Near East Side"
@@ -332,6 +342,16 @@
         }
     },
     {
+        "name": "Ensemble Theater",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.507383",
+            "longitude": "-81.57752"
+        }
+    },
+    {
         "name": "Euclid Golf Historic District",
         "territory": [
             "Near East Side"
@@ -349,6 +369,16 @@
         "location": {
             "latitude": "41.477391",
             "longitude": "-81.527482"
+        }
+    },
+    {
+        "name": "Federation of India Community",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5009326",
+            "longitude": "-81.594193"
         }
     },
     {
@@ -413,6 +443,46 @@
         "location": {
             "latitude": "41.466308",
             "longitude": "-81.5648362"
+        }
+    },
+    {
+        "name": "Cedar Green Synagogue And Kollel",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4999408",
+            "longitude": "-81.518091"
+        }
+    },
+    {
+        "name": "Courtland Oval Soccer Field",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.486316",
+            "longitude": "-81.543816"
+        }
+    },
+    {
+        "name": "Green Road Rapid Station",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4785599",
+            "longitude": "-81.5180107"
+        }
+    },
+    {
+        "name": "Green Road Synagogue",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4933783",
+            "longitude": "-81.5166707"
         }
     },
     {
@@ -481,9 +551,23 @@
         }
     },
     {
-        "name": "Highland Park Cemetery",
+        "name": "Highland Park Cemetery, Chagrin",
         "aliases": [
             "HPC"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4601291",
+            "longitude": "-81.532816"
+        }
+    },
+    {
+        "name": "Highland Park Cemetery, Northfield",
+        "aliases": [
+            "HPC",
+            "Cemetery Entrance"
         ],
         "territory": [
             "Shaker Heights"
@@ -614,8 +698,8 @@
             "University Circle"
         ],
         "location": {
-            "latitude": "41.5117700",
-            "longitude": "-81.6158460"
+            "latitude": "41.515842",
+            "longitude": "-81.6140396"
         }
     },
     {
@@ -634,6 +718,7 @@
         "territory": [
             "Near East Side"
         ],
+        "is_ex_eligible": true,
         "location": {
             "latitude": "41.5270392",
             "longitude": "-81.5746315"
@@ -647,6 +732,16 @@
         "location": {
             "latitude": "41.5014651",
             "longitude": "-81.5561845"
+        }
+    },
+    {
+        "name": "MLK Gazebo",
+        "territory": [
+            "University Circle"
+        ],
+        "location": {
+            "latitude": "41.5137356",
+            "longitude": "-81.6184752"
         }
     },
     {
@@ -671,6 +766,16 @@
         "location": {
             "latitude": "41.504233",
             "longitude": "-81.608064"
+        }
+    },
+    {
+        "name": "Mother Earth Mural",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.4887527",
+            "longitude": "-81.5951674"
         }
     },
     {
@@ -708,6 +813,16 @@
         "location": {
             "latitude": "41.505077",
             "longitude": "-81.610957"
+        }
+    },
+    {
+        "name": "Nine Mile Creek Wetland",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5062711",
+            "longitude": "-81.5201357"
         }
     },
     {
@@ -818,6 +933,20 @@
         }
     },
     {
+        "name": "Somerset, Farnsleigh, Belvoir Triangle Park",
+        "aliases": [
+            "SFB Triangle Park"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "is_ex_eligible": true,
+        "location": {
+            "latitude": "41.4675439",
+            "longitude": "-81.565597"
+        }
+    },
+    {
         "name": "Shaker Heights City Hall",
         "territory": [
             "Shaker Heights"
@@ -849,6 +978,19 @@
         "location": {
             "latitude": "41.462859",
             "longitude": "-81.5384738"
+        }
+    },
+    {
+        "name": "Shaker Heights Decorative Plaque",
+        "alias": [
+            "SHDP"
+        ],
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4863579",
+            "longitude": "-81.5173143"
         }
     },
     {
@@ -1016,6 +1158,16 @@
         }
     },
     {
+        "name": "Station 8: Pull Up",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.5081186",
+            "longitude": "-81.5442332"
+        }
+    },
+    {
         "name": "Taylor Road Synagogue",
         "territory": [
             "Near East Side"
@@ -1153,6 +1305,16 @@
         }
     },
     {
+        "name": "Unitarian Playground",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4765963",
+            "longitude": "-81.5266907"
+        }
+    },
+    {
         "name": "Unitarian Universalist Society of Cleveland",
         "territory": [
             "Near East Side"
@@ -1175,6 +1337,17 @@
         "location": {
             "latitude": "41.4866826",
             "longitude": "-81.5557187"
+        }
+    },
+    {
+        "name": "University Heights Water Slide",
+        "territory": [
+            "Near East Side"
+        ],
+        "is_ex_eligible": false,
+        "location": {
+            "latitude": "41.5002691",
+            "longitude": "-81.5270258"
         }
     },
     {
@@ -1281,6 +1454,16 @@
         "location": {
             "latitude": "41.4656982",
             "longitude": "-81.5623577"
+        }
+    },
+    {
+        "name": "Yanowitz Fitness Trail Plaque",
+        "territory": [
+            "Near East Side"
+        ],
+        "location": {
+            "latitude": "41.506823",
+            "longitude": "-81.544484"
         }
     }
 ]
