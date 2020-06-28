@@ -70,7 +70,7 @@ namespace PoGoChatbot.Helpers
         private static async Task HandleMapInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             Regex mapRegex = new Regex($"^!map \"?([^\"]+)\"?$", RegexOptions.IgnoreCase);
-            var argument = mapRegex.Match(turnContext.Activity.Text).Groups?.ElementAtOrDefault(1)?.Value ?? string.Empty;
+            var argument = mapRegex.Match(turnContext.Activity.Text).Groups?.Values?.ElementAtOrDefault(1)?.Value ?? string.Empty;
             var normalizedGroupName = VariableResources.ValidateAndNormalizeGroupName(argument);
             var mapUrl = VariableResources.GetMapUrl(normalizedGroupName);
 
