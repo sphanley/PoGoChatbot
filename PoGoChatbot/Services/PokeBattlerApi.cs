@@ -35,6 +35,14 @@ namespace PoGoChatbot.Services
             return default(T);
         }
 
+        public static async Task<List<Raid>> GetRaids()
+        {
+            if (!raidList.Tiers.Any() || raidListExpirationDateTime < DateTime.Now) raidList = await LoadDataFromApi<RaidList>("raids");
+
+            return raidList.Tiers?.Select(t => t.Raids)?.SelectMany(raids => raids)?.ToList() ?? new List<Raid>();
+
+        }
+
         public static async Task<List<Raid>> GetRaids(int tier)
         {
             if (!raidList.Tiers.Any() || raidListExpirationDateTime < DateTime.Now) raidList = await LoadDataFromApi<RaidList>("raids");

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -29,6 +30,10 @@ namespace PoGoChatbot.Helpers
                 case "!bosses":
                 case "!raidbosses":
                     await HandleRaidBossesInvocation(turnContext, cancellationToken);
+                    break;
+                case "!counters":
+                case "!howmany":
+                    await HandleInfographicInvocation(turnContext, cancellationToken);
                     break;
                 case "!map":
                     await HandleMapInvocation(turnContext, cancellationToken);
@@ -61,10 +66,44 @@ namespace PoGoChatbot.Helpers
                 "• For the map of all gyms within this group's area, say \"!map\".\n\n" +
                 $"• For the location of a specific gym, say \"!whereis {{Gym Name}}\" - for example, \"!whereis {exampleGymNames[0]}\" or \"!whereis {exampleGymNames[1]}\".\n\n" +
                 "• For the type(s), strengths and weaknesses of a specific Pokémon, say \"!type {Pokémon Name}\" or \"!type {Pokémon number}\"  - for example, \"!type Pikachu\" or \"!type 25\".\n\n" +
+                "• For info about how many trainers are needed for a tier-five raid boss, or the best counters, say \"!counters {Pokémon name}\" or \"!howmany {Pokémon name}\".\n\n" +
                 "• For a link to the list of known current raid bosses, say \"!raidbosses\" or \"!bosses\".\n\n" +
                 "• For info on how to send a bug report or feature request, say \"!bugreport\" or \"!featurerequest\".\n\n" +
                 "• For this list, say \"!help\"."
             ), cancellationToken);
+        }
+
+        private static async Task HandleInfographicInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        {
+            Regex typeLookupRegex = new Regex($"^!\\w+ \"?([^\"]+)\"?$", RegexOptions.IgnoreCase);
+            Match typeLookupMatch = typeLookupRegex.Match(turnContext.Activity.Text);
+            var searchTerm = ((typeLookupMatch.Success && typeLookupMatch.Groups.Count >= 2) ? typeLookupMatch.Groups[1].Value : "").ToLowerInvariant();
+
+            var raids = await PokeBattlerApi.GetRaids();
+            var results = raids.Where(raid =>
+                !string.IsNullOrEmpty(raid.Article?.InfographicURL) &&
+                !searchTerm.Replace("-", " ").Split(" ").Except(raid.Pokemon.ToLowerInvariant().Replace("_", " ").Split(" ")).Any()
+            );
+
+            TextInfo ti = new CultureInfo("en-US", false).TextInfo;
+            if (results.Any())
+            {
+                bool pluralize = results.Count() > 1;
+
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Here's {(pluralize ? "infographics" : " an infographic")} with details about {ti.ToTitleCase(searchTerm)}, courtesy of Pokebattler."));
+
+                await turnContext.SendActivitiesAsync(
+                    results
+                    .Select(result =>
+                        MessageFactory.Attachment(new Attachment("image/png", result.Article.InfographicURL)) as IActivity
+                    )
+                    .ToArray()
+                );
+            }
+            else
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, but Pokebattler doesn't currently appear to have an infographic for {ti.ToTitleCase(searchTerm)}"), cancellationToken);
+            }
         }
 
         private static async Task HandleMapInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -97,7 +136,7 @@ namespace PoGoChatbot.Helpers
             {
                 bool pluralize = tierFiveRaids.Count() > 1;
 
-                await turnContext.SendActivityAsync(MessageFactory.Text($"Here's {(pluralize ? "infographics" : " an infographic")} with details about the current tier-five raid {(pluralize ? "bosses" : "boss")}, courtesy of PokeBattler."));
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Here's {(pluralize ? "infographics" : " an infographic")} with details about the current tier-five raid {(pluralize ? "bosses" : "boss")}, courtesy of Pokebattler."));
 
                 await turnContext.SendActivitiesAsync(
                     tierFiveRaids
