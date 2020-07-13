@@ -93,20 +93,20 @@ namespace PoGoChatbot.Helpers
             await turnContext.SendActivityAsync(MessageFactory.Text(Constants.RaidBossesMessage), cancellationToken);
 
             var tierFiveRaids = await PokeBattlerApi.GetRaids(tier: 5);
-            //if (tierFiveRaids.All(raid => !string.IsNullOrEmpty(raid.Article?.InfographicURL)))
-            //{
-            //    bool pluralize = tierFiveRaids.Count() > 1;
+            if (tierFiveRaids.All(raid => !string.IsNullOrEmpty(raid.Article?.InfographicURL)))
+            {
+                bool pluralize = tierFiveRaids.Count() > 1;
 
-            //    await turnContext.SendActivityAsync(MessageFactory.Text($"Here's {(pluralize ? "infographics" : " an infographic")} with details about the current tier-five raid {(pluralize ? "bosses" : "boss")}, courtesy of PokeBattler."));
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Here's {(pluralize ? "infographics" : " an infographic")} with details about the current tier-five raid {(pluralize ? "bosses" : "boss")}, courtesy of PokeBattler."));
 
-            //    await turnContext.SendActivitiesAsync(
-            //        tierFiveRaids
-            //        .Select(raid =>
-            //            MessageFactory.Attachment(new Attachment("image/png", raid.Article.InfographicURL)) as IActivity
-            //        )
-            //        .ToArray()
-            //    );
-            //}
+                await turnContext.SendActivitiesAsync(
+                    tierFiveRaids
+                    .Select(raid =>
+                        MessageFactory.Attachment(new Attachment("image/png", raid.Article.InfographicURL)) as IActivity
+                    )
+                    .ToArray()
+                );
+            }
         }
 
         private static async Task HandleTypeLookupInvocation(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
