@@ -60,7 +60,7 @@ namespace PoGoChatbot.Helpers
             await turnContext.SendActivityAsync(MessageFactory.Text(
                 "• For the map of all gyms within this group's area, say \"!map\".\n\n" +
                 $"• For the location of a specific gym, say \"!whereis {{Gym Name}}\" - for example, \"!whereis {exampleGymNames[0]}\" or \"!whereis {exampleGymNames[1]}\".\n\n" +
-                "• For the type(s), strengths and weaknesses of a specific pokemon, say \"!type {Pokemon Name}\" or \"!type {Pokemon number}\"  - for example, \"!type Pikachu\" or \"!type 25\".\n\n" +
+                "• For the type(s), strengths and weaknesses of a specific Pokémon, say \"!type {Pokémon Name}\" or \"!type {Pokémon number}\"  - for example, \"!type Pikachu\" or \"!type 25\".\n\n" +
                 "• For a link to the list of known current raid bosses, say \"!raidbosses\" or \"!bosses\".\n\n" +
                 "• For info on how to send a bug report or feature request, say \"!bugreport\" or \"!featurerequest\".\n\n" +
                 "• For this list, say \"!help\"."
@@ -137,7 +137,7 @@ namespace PoGoChatbot.Helpers
             }
             else
             {
-                await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, I couldn't find a pokemon with the name or number \"{searchTerm}\"."), cancellationToken);
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Sorry, I couldn't find a Pokémon with the name or number \"{searchTerm}\"."), cancellationToken);
             }
         }
 
