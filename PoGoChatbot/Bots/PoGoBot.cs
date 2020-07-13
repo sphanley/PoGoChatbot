@@ -30,7 +30,10 @@ namespace PoGoChatbot.Bots
             }
             if (turnContext.Activity.Polls().Any())
             {
-                await turnContext.SendActivityAsync(MessageFactory.Text(Constants.VoteAndLikeReminder), cancellationToken);
+                await turnContext.SendActivitiesAsync(new[] {
+                    MessageFactory.Text(Constants.VoteAndLikeReminder),
+                    MessageFactory.Text(Constants.MaskReminder)
+                }, cancellationToken);
             }
         }
 
