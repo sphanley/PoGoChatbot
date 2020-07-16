@@ -1697,8 +1697,8 @@
         ],
         "is_ex_eligible": true,
         "location": {
-            "latitude": "41.4675439",
-            "longitude": "-81.565597"
+            "latitude": "41.4689831",
+            "longitude": "-81.5308383"
         }
     },
     {
@@ -1782,7 +1782,7 @@
     },
     {
         "name": "St Bartholomew Church Sign",
-        "aliases":[
+        "aliases": [
             "Saint Bartholomew Church Sign",
             "St Bart's",
             "Saint Bart's"
@@ -1920,7 +1920,7 @@
     },
     {
         "name": "Starbucks",
-        "aliases":[
+        "aliases": [
             "Maybucks"
         ],
         "territory": [
@@ -2344,6 +2344,16 @@
         "location": {
             "latitude": "41.4656982",
             "longitude": "-81.5623577"
+        }
+    },
+    {
+        "name": "Winslow Road Sign",
+        "territory": [
+            "Shaker Heights"
+        ],
+        "location": {
+            "latitude": "41.4655925",
+            "longitude": "-81.5395413"
         }
     },
     {
